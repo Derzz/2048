@@ -6,7 +6,7 @@
  */
 package pkg2048gui;
 
-//Imports files
+//Imports
 import javax.swing.ImageIcon;
 import java.awt.event.*;
 import java.io.IOException;
@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 
 public class Game extends javax.swing.JFrame {
 
-    //Initalizes the stopwatch object
     stopwatch w = new stopwatch();
 
     javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];
@@ -26,7 +25,6 @@ public class Game extends javax.swing.JFrame {
      * Creates new form Game
      */
     public Game() {
-        super("2048");
         initComponents();
         tiles[0][0] = Tile1;    // Set tiles to array
         tiles[0][1] = Tile2;
@@ -73,21 +71,22 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
-        boolean moved = false;
+        int moves;
         //Switch cases used for arrow key directions.
         switch (dir) {
             case 0: // UP
                 for (int x = 0; x < 4; x++) {
+                    moves = 0;
                     for (int y = 1; y < 4; y++) {
                         for (int i = y; i > 0; i--) {
                             if (board[i - 1][x] == 0) {    // If tile beside is empty/different, move and set tiles as 0
                                 board[i - 1][x] = board[i][x];
                                 board[i][x] = 0;
-                            } else if (board[i - 1][x] == board[i][x] && moved == false) {   // If tile beside is the same, multiply tile value * 2
+                            } else if (moves < 1 && board[i - 1][x] == board[i][x]) {   // If tile beside is the same, multiply tile value * 2
                                 board[i - 1][x] *= 2;
                                 board[i][x] = 0;
                                 count--;    // Remove 1 from number of tiles on board
-                                moved = true;
+                                moves++;
                             }
                         }
                     }
@@ -95,16 +94,17 @@ public class Game extends javax.swing.JFrame {
                 break;
             case 1: // RIGHT
                 for (int y = 0; y < 4; y++) {
+                    moves = 0;
                     for (int x = 2; x >= 0; x--) {
                         for (int i = x; i < 3; i++) {
                             if (board[y][i + 1] == 0) {
                                 board[y][i + 1] = board[y][i];
                                 board[y][i] = 0;
-                            } else if (board[y][i + 1] == board[y][i] && moved == false) {
+                            } else if (moves < 1 && board[y][i + 1] == board[y][i]) {
                                 board[y][i + 1] *= 2;
                                 board[y][i] = 0;
                                 count--;
-                                moved = true;
+                                moves++;
                             }
                         }
                     }
@@ -112,16 +112,17 @@ public class Game extends javax.swing.JFrame {
                 break;
             case 2: // DOWN
                 for (int x = 0; x < 4; x++) {
+                    moves = 0;
                     for (int y = 2; y >= 0; y--) {
                         for (int i = y; i < 3; i++) {
                             if (board[i + 1][x] == 0) {
                                 board[i + 1][x] = board[i][x];
                                 board[i][x] = 0;
-                            } else if (board[i + 1][x] == board[i][x] && moved == false) {
+                            } else if (moves < 1 && board[i + 1][x] == board[i][x]) {
                                 board[i + 1][x] *= 2;
                                 board[i][x] = 0;
                                 count--;
-                                moved = true;
+                                moves++;
                             }
                         }
                     }
@@ -129,16 +130,17 @@ public class Game extends javax.swing.JFrame {
                 break;
             case 3: // LEFT
                 for (int y = 0; y < 4; y++) {
+                    moves = 0;
                     for (int x = 1; x < 4; x++) {
                         for (int i = x; i > 0; i--) {
                             if (board[y][i - 1] == 0) {
                                 board[y][i - 1] = board[y][i];
                                 board[y][i] = 0;
-                            } else if (board[y][i - 1] == board[y][i] && moved == false) {
+                            } else if (moves < 1 && board[y][i - 1] == board[y][i]) {
                                 board[y][i - 1] *= 2;
                                 board[y][i] = 0;
                                 count--;
-                                moved = true;
+                                moves++;
                             }
                         }
                     }
@@ -172,6 +174,8 @@ public class Game extends javax.swing.JFrame {
         if (count == 16 && values.equals(newValues)) {  // Find a way to revert this check if there are still options, this still needs work
             String temp = newValues;
 
+            System.out.println(temp.equals(newValues));
+
             if (temp.equals(newValues)) {
                 this.setVisible(false);
                 w.stopwatchStop();
@@ -181,7 +185,6 @@ public class Game extends javax.swing.JFrame {
         }
         long temp = 0;
         long time;
-        
         for (int j = 0; j < 4; j++) {   //Go through array, checks if any of the values are equal to 2048.
             for (int i = 0; i < 4; i++) {
                 if (board[j][i] == 2048) {
@@ -211,7 +214,7 @@ public class Game extends javax.swing.JFrame {
     }
 
     public void start() {
-        w.stopwatchStart();//Starts the stopwatch
+        w.stopwatchStart();
         this.setVisible(true);
     }
 
@@ -506,7 +509,6 @@ public class Game extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Menu button, if pressed it will send the user back to the main menu
     private void menuGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGameActionPerformed
         this.setVisible(false);
         Menu m = new Menu();
@@ -526,7 +528,6 @@ public class Game extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_keyPressed
 
-    //Restart button, if pressed it will reset the game
     private void restartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartGameActionPerformed
         this.setVisible(false);
         Menu b = new Menu();
