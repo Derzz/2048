@@ -40,7 +40,7 @@
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="displayedInstructions" min="-2" pref="450" max="-2" attributes="0"/>
+                      <Component id="lblDisplay" min="-2" pref="450" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -48,7 +48,7 @@
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Component id="btnNext" min="-2" pref="107" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="menu" min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="btnMenu" min="-2" pref="104" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -59,12 +59,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="displayedInstructions" min="-2" pref="450" max="-2" attributes="0"/>
+              <Component id="lblDisplay" min="-2" pref="450" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnNext" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="menu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMenu" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="progressBar" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
@@ -92,12 +92,12 @@
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="keyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="displayedInstructions">
+    <Component class="javax.swing.JLabel" name="lblDisplay">
       <Events>
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="keyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menu">
+    <Component class="javax.swing.JButton" name="btnMenu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5f" green="7c" red="f5" type="rgb"/>
@@ -111,7 +111,7 @@
         <Property name="text" type="java.lang.String" value="MENU"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenuActionPerformed"/>
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="keyPressed"/>
       </Events>
     </Component>

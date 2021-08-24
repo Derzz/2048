@@ -52,11 +52,11 @@ class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        exitBut = new javax.swing.JButton();
-        playBut = new javax.swing.JButton();
-        tutorialBut = new javax.swing.JButton();
-        leaderboardBut = new javax.swing.JButton();
+        lbl2048Image = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        btnPlay = new javax.swing.JButton();
+        btnTutorial = new javax.swing.JButton();
+        btnLeaderboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(251, 248, 241));
@@ -65,47 +65,47 @@ class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 680));
         setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2048LogoLarge.png"))); // NOI18N
-        jLabel1.setDoubleBuffered(true);
-        jLabel1.setPreferredSize(new java.awt.Dimension(470, 620));
+        lbl2048Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2048LogoLarge.png"))); // NOI18N
+        lbl2048Image.setDoubleBuffered(true);
+        lbl2048Image.setPreferredSize(new java.awt.Dimension(470, 620));
 
-        exitBut.setBackground(new java.awt.Color(245, 124, 95));
-        exitBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        exitBut.setForeground(new java.awt.Color(255, 255, 255));
-        exitBut.setText("EXIT");
-        exitBut.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(245, 124, 95));
+        btnExit.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
-        playBut.setBackground(new java.awt.Color(237, 153, 91));
-        playBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        playBut.setForeground(new java.awt.Color(255, 255, 255));
-        playBut.setText("PLAY");
-        playBut.addActionListener(new java.awt.event.ActionListener() {
+        btnPlay.setBackground(new java.awt.Color(237, 153, 91));
+        btnPlay.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnPlay.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlay.setText("PLAY");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playButActionPerformed(evt);
+                btnPlayActionPerformed(evt);
             }
         });
 
-        tutorialBut.setBackground(new java.awt.Color(236, 141, 83));
-        tutorialBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        tutorialBut.setForeground(new java.awt.Color(255, 255, 255));
-        tutorialBut.setText("TUTORIAL");
-        tutorialBut.addActionListener(new java.awt.event.ActionListener() {
+        btnTutorial.setBackground(new java.awt.Color(236, 141, 83));
+        btnTutorial.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnTutorial.setForeground(new java.awt.Color(255, 255, 255));
+        btnTutorial.setText("TUTORIAL");
+        btnTutorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tutorialButActionPerformed(evt);
+                btnTutorialActionPerformed(evt);
             }
         });
 
-        leaderboardBut.setBackground(new java.awt.Color(236, 224, 202));
-        leaderboardBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        leaderboardBut.setForeground(new java.awt.Color(119, 110, 101));
-        leaderboardBut.setText("LEADERBOARD");
-        leaderboardBut.addActionListener(new java.awt.event.ActionListener() {
+        btnLeaderboard.setBackground(new java.awt.Color(236, 224, 202));
+        btnLeaderboard.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnLeaderboard.setForeground(new java.awt.Color(119, 110, 101));
+        btnLeaderboard.setText("LEADERBOARD");
+        btnLeaderboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                leaderboardButActionPerformed(evt);
+                btnLeaderboardActionPerformed(evt);
             }
         });
 
@@ -117,12 +117,12 @@ class Menu extends javax.swing.JFrame {
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tutorialBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(leaderboardBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTutorial, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnLeaderboard, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl2048Image, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
@@ -130,15 +130,15 @@ class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl2048Image, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(tutorialBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTutorial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(leaderboardBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLeaderboard, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
@@ -146,24 +146,24 @@ class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Exit button, exits the program.
-    private void exitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitButActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
 
     //Play button, allows the user to play the game
-    private void playButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButActionPerformed
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
        game();
-    }//GEN-LAST:event_playButActionPerformed
+    }//GEN-LAST:event_btnPlayActionPerformed
 
     //Tutorial button, allows the user to start the tutorial
-    private void tutorialButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tutorialButActionPerformed
+    private void btnTutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTutorialActionPerformed
        tutorial();
-    }//GEN-LAST:event_tutorialButActionPerformed
+    }//GEN-LAST:event_btnTutorialActionPerformed
 
     //Leaderboard button, allows the user to access the leaderboard
-    private void leaderboardButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaderboardButActionPerformed
+    private void btnLeaderboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaderboardActionPerformed
        leaderboard();
-    }//GEN-LAST:event_leaderboardButActionPerformed
+    }//GEN-LAST:event_btnLeaderboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,10 +199,10 @@ class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitBut;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton leaderboardBut;
-    private javax.swing.JButton playBut;
-    private javax.swing.JButton tutorialBut;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnLeaderboard;
+    private javax.swing.JButton btnPlay;
+    private javax.swing.JButton btnTutorial;
+    private javax.swing.JLabel lbl2048Image;
     // End of variables declaration//GEN-END:variables
 }

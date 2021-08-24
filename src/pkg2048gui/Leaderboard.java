@@ -24,122 +24,119 @@ public class Leaderboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitle2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        menuGame1 = new javax.swing.JButton();
+        lbl2048Image = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblDescription1 = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        out = new javax.swing.JTextArea();
-        showBut = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        txtOutput = new javax.swing.JTextArea();
+        btnShow = new javax.swing.JButton();
+        lblDescription2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 680));
         setPreferredSize(new java.awt.Dimension(500, 680));
         setSize(new java.awt.Dimension(500, 680));
 
-        lblTitle2.setFont(new java.awt.Font("Clear Sans", 1, 48)); // NOI18N
-        lblTitle2.setForeground(new java.awt.Color(236, 196, 0));
-        lblTitle2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2048Logo.png"))); // NOI18N
+        lbl2048Image.setFont(new java.awt.Font("Clear Sans", 1, 48)); // NOI18N
+        lbl2048Image.setForeground(new java.awt.Color(236, 196, 0));
+        lbl2048Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2048Logo.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Clear Sans", 1, 40)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(111, 107, 96));
-        jLabel4.setText("LEADERBOARD");
+        lblTitle.setFont(new java.awt.Font("Clear Sans", 1, 40)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(111, 107, 96));
+        lblTitle.setText("LEADERBOARD");
 
-        jLabel5.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(83, 77, 71));
-        jLabel5.setText("Check out the people who reached 2048!");
+        lblDescription1.setFont(new java.awt.Font("Clear Sans Medium", 0, 14)); // NOI18N
+        lblDescription1.setForeground(new java.awt.Color(83, 77, 71));
+        lblDescription1.setText("Check out the people who reached 2048!");
 
-        menuGame1.setBackground(new java.awt.Color(245, 124, 95));
-        menuGame1.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
-        menuGame1.setForeground(new java.awt.Color(255, 255, 255));
-        menuGame1.setText("MENU");
-        menuGame1.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setBackground(new java.awt.Color(245, 124, 95));
+        btnMenu.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
+        btnMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenu.setText("MENU");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuGame1ActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
 
-        out.setColumns(20);
-        out.setRows(5);
-        jScrollPane1.setViewportView(out);
+        txtOutput.setColumns(20);
+        txtOutput.setFont(new java.awt.Font("Clear Sans Medium", 0, 12)); // NOI18N
+        txtOutput.setRows(5);
+        jScrollPane1.setViewportView(txtOutput);
 
-        showBut.setBackground(new java.awt.Color(245, 124, 95));
-        showBut.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
-        showBut.setForeground(new java.awt.Color(255, 255, 255));
-        showBut.setText("Show!");
-        showBut.addActionListener(new java.awt.event.ActionListener() {
+        btnShow.setBackground(new java.awt.Color(245, 124, 95));
+        btnShow.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
+        btnShow.setForeground(new java.awt.Color(255, 255, 255));
+        btnShow.setText("SHOW");
+        btnShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showButActionPerformed(evt);
+                btnShowActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(83, 77, 71));
-        jLabel6.setText("Click show to show the leaderboard!");
+        lblDescription2.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
+        lblDescription2.setForeground(new java.awt.Color(83, 77, 71));
+        lblDescription2.setText("Click Show to see the Leaderboard.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblTitle2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(btnShow, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)))
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(showBut, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(menuGame1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl2048Image)
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTitle)
+                                    .addComponent(lblDescription1)
+                                    .addComponent(lblDescription2))))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle2)
+                    .addComponent(lbl2048Image)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTitle)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(50, 50, 50)
-                                .addComponent(jLabel5))
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)))
+                                .addComponent(lblDescription1)))
+                        .addComponent(lblDescription2)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuGame1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(showBut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(115, Short.MAX_VALUE))
+                    .addComponent(btnShow, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 //When the menu button is clicked, it sends the user to the main menu.
-    private void menuGame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGame1ActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         this.setVisible(false);
         Menu m = new Menu();
         m.start();
-    }//GEN-LAST:event_menuGame1ActionPerformed
+    }//GEN-LAST:event_btnMenuActionPerformed
 //When the show button is clicked, it shows the leaderboard from win.txt.
-    private void showButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showButActionPerformed
+    private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
         try {
             File file = new File("win.txt");
             Scanner fileReader = new Scanner(file);
@@ -148,16 +145,16 @@ public class Leaderboard extends javax.swing.JFrame {
                 fileReader.next();//Skips over the numbers at the beginning of the lines.
                 temp = temp+fileReader.nextLine()+ "\n";//Stores the value into the String value
             }
-            out.setText(temp);//Output the values on the JTextArea
+            txtOutput.setText(temp);//Output the values on the JTextArea
 
         } catch (Exception e) {
-            out.setText("Looks like no one has gotten a place on the leaderboard yet!\nMaybe it's time for you to get to 2048!");//If no file is detected, it means no one got to 2048. This means someone needs to get to 2048.
+            txtOutput.setText("Looks like no one has gotten a place on the leaderboard yet!\nMaybe it's time for you to get to 2048!");//If no file is detected, it means no one got to 2048. This means someone needs to get to 2048.
         }
         
-        showBut.hide();//Hides the show button
-        jLabel6.hide();//Hides the label asking them to click the "show" button.
+        btnShow.hide();//Hides the show button
+        lblDescription2.hide();//Hides the label asking them to click the "show" button.
 
-    }//GEN-LAST:event_showButActionPerformed
+    }//GEN-LAST:event_btnShowActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,13 +192,13 @@ public class Leaderboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnShow;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblTitle2;
-    private javax.swing.JButton menuGame1;
-    private javax.swing.JTextArea out;
-    private javax.swing.JButton showBut;
+    private javax.swing.JLabel lbl2048Image;
+    private javax.swing.JLabel lblDescription1;
+    private javax.swing.JLabel lblDescription2;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextArea txtOutput;
     // End of variables declaration//GEN-END:variables
 }

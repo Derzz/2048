@@ -1,12 +1,14 @@
 /*
-* Danish Wasif, Evan Woo, Michael Xie, Justin Ye
-* August 24, 2021
-* ICS4UE-20
-* Code that is the mainframe of the various aspects on how the game works, it does not show the gui aspects.
+ * Danish Wasif, Evan Woo, Michael Xie, Justin Ye
+ * August 24, 2021
+ * ICS4UE-20
+ * Game.java
+ * This program is the mainframe of the game mechanics.
  */
+
 package pkg2048gui;
 
-//Imports
+// Imports
 import javax.swing.ImageIcon;
 import java.awt.event.*;
 import java.io.IOException;
@@ -15,18 +17,19 @@ import java.util.logging.Logger;
 
 public class Game extends javax.swing.JFrame {
 
-    stopwatch w = new stopwatch();
+    stopwatch w = new stopwatch();  // Import the stopwatch to this game file.
 
-    javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];
-    int[][] board = new int[4][4];//Creates the 2D array for the board
-    int count = 2;//counter for the amount of empty elements on the board
+    javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];    // Generate a 2D array to display the tile images.
+    int[][] board = new int[4][4];                                  // Generate a 2D array to store the value of the tiles.
+    int count = 2;                  // Initialize the counter variable for the number of tiles. 
+                                    // Set the board to generate 2 tiles at the beginning.
 
     /**
      * Creates new form Game
      */
     public Game() {
         initComponents();
-        tiles[0][0] = Tile1;    // Set tiles to array
+        tiles[0][0] = Tile1;        // Assigns each tile in the grid to its corresponding spot in the array.
         tiles[0][1] = Tile2;
         tiles[0][2] = Tile3;
         tiles[0][3] = Tile4;
@@ -42,105 +45,111 @@ public class Game extends javax.swing.JFrame {
         tiles[3][1] = Tile14;
         tiles[3][2] = Tile15;
         tiles[3][3] = Tile16;
-        for (int j = 0; j < 4; j++) {    // Goes through entire array, assigns all tiles as 0(For start)
+        
+        for (int j = 0; j < 4; j++) {    // Loop goes through every value in 2D array
             for (int i = 0; i < 4; i++) {
-                tiles[j][i].setIcon(new ImageIcon("0.png"));
+                tiles[j][i].setIcon(new ImageIcon("0.png"));    // Makes all tiles blank for the start.
             }
         }
-        // Randomly selects 2 different spots on the grid and generates either a 2 or a 4 tile
+        
+        // Randomly selects 2 different spots on the grid and generates either a 2 or a 4 tile.
         int rand = (int) (Math.random() * 16);
         int rand2 = (int) (Math.random() * 16);
-        while (rand2 == rand) {
+        while (rand2 == rand) {                     // If both variables happen to be the same, randomize again.
             rand2 = (int) (Math.random() * 16);
         }
-        board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;
-        board[(int) (rand2 / 4)][rand2 % 4] = ((int) (Math.random() * 2) + 1) * 2;
-        tiles[(int) (rand / 4)][rand % 4].setIcon(new ImageIcon(board[(int) (rand / 4)][rand % 4] + ".png"));
-        tiles[(int) (rand2 / 4)][rand2 % 4].setIcon(new ImageIcon(board[(int) (rand2 / 4)][rand2 % 4] + ".png"));
+        
+        board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;    // Choose a random tile to generate a 2 or 4 tile.
+        board[(int) (rand2 / 4)][rand2 % 4] = ((int) (Math.random() * 2) + 1) * 2;  // Choose a second random tile to generate a 2 or 4 tile.
+        tiles[(int) (rand / 4)][rand % 4].setIcon(new ImageIcon(board[(int) (rand / 4)][rand % 4] + ".png"));       // Display  2 or 4  on the random tile.
+        tiles[(int) (rand2 / 4)][rand2 % 4].setIcon(new ImageIcon(board[(int) (rand2 / 4)][rand2 % 4] + ".png"));   // Display  2 or 4 on the other random tile.
     }
 
-    //Slide function, based on user input it will slide the tiles.
+    // Slide function, slides tiles based on the user's input.
     public void slide(int dir) {
-        String values = "";
-        for (int a = 0; a < 4; a++) {    // Goes through entire array, adds array values as a String
+        String values = "";              // Initializes the array entered.
+        for (int a = 0; a < 4; a++) {    // Goes through entire array, combines all values into a String.
             for (int b = 0; b < 4; b++) {
-                values += String.valueOf(board[a][b]);
+                values += String.valueOf(board[a][b]);  // Add the value of the specific tile to the String.
                 if (b != 16) {
-                    values += " ";
+                    values += " ";       // Add a space in between each value until all 16 tiles are added to String.
                 }
             }
         }
 
-        int moves;
-        //Switch cases used for arrow key directions.
-        switch (dir) {
-            case 0: // UP
-                for (int x = 0; x < 4; x++) {
-                    moves = 0;
+        boolean moves;  // Initialize the boolean variable to track if a tile has moved.
+        
+        switch (dir) {  // Switch cases used for arrow key directions.
+            case 0: // UP Key.
+                for (int x = 0; x < 4; x++) {       // Loop through all array values.
+                    moves = false;                  // Reset the tracking boolean variable as false.
                     for (int y = 1; y < 4; y++) {
                         for (int i = y; i > 0; i--) {
-                            if (board[i - 1][x] == 0) {    // If tile beside is empty/different, move and set tiles as 0
-                                board[i - 1][x] = board[i][x];
-                                board[i][x] = 0;
-                            } else if (moves < 1 && board[i - 1][x] == board[i][x]) {   // If tile beside is the same, multiply tile value * 2
+                            if (board[i - 1][x] == 0) {          // If the tile above is empty (value 0). 
+                                board[i - 1][x] = board[i][x];   // Move the tile up.
+                                board[i][x] = 0;                 // Set the tile's old place as 0.
+                            } else if (moves == false && board[i - 1][x] == board[i][x]) {   // If tile beside is the same, multiply tile value * 2
                                 board[i - 1][x] *= 2;
                                 board[i][x] = 0;
                                 count--;    // Remove 1 from number of tiles on board
-                                moves++;
+                                moves = true;
                             }
                         }
                     }
                 }
                 break;
-            case 1: // RIGHT
-                for (int y = 0; y < 4; y++) {
-                    moves = 0;
+                
+            case 1: // RIGHT Key.
+                for (int y = 0; y < 4; y++) {       // Loop through all array values.
+                    moves = false;                  // Reset the tracking boolean variable as false.
                     for (int x = 2; x >= 0; x--) {
                         for (int i = x; i < 3; i++) {
-                            if (board[y][i + 1] == 0) {
+                            if (board[y][i + 1] == 0) {         // If the tile to the right is empty (value 0). 
                                 board[y][i + 1] = board[y][i];
                                 board[y][i] = 0;
-                            } else if (moves < 1 && board[y][i + 1] == board[y][i]) {
+                            } else if (moves == false && board[y][i + 1] == board[y][i]) {
                                 board[y][i + 1] *= 2;
                                 board[y][i] = 0;
                                 count--;
-                                moves++;
+                                moves = true;
                             }
                         }
                     }
                 }
                 break;
+                
             case 2: // DOWN
                 for (int x = 0; x < 4; x++) {
-                    moves = 0;
+                    moves = false;
                     for (int y = 2; y >= 0; y--) {
                         for (int i = y; i < 3; i++) {
                             if (board[i + 1][x] == 0) {
                                 board[i + 1][x] = board[i][x];
                                 board[i][x] = 0;
-                            } else if (moves < 1 && board[i + 1][x] == board[i][x]) {
+                            } else if (moves == false && board[i + 1][x] == board[i][x]) {
                                 board[i + 1][x] *= 2;
                                 board[i][x] = 0;
                                 count--;
-                                moves++;
+                                moves = true;
                             }
                         }
                     }
                 }
                 break;
+                
             case 3: // LEFT
                 for (int y = 0; y < 4; y++) {
-                    moves = 0;
+                    moves = false;
                     for (int x = 1; x < 4; x++) {
                         for (int i = x; i > 0; i--) {
                             if (board[y][i - 1] == 0) {
                                 board[y][i - 1] = board[y][i];
                                 board[y][i] = 0;
-                            } else if (moves < 1 && board[y][i - 1] == board[y][i]) {
+                            } else if (moves == false && board[y][i - 1] == board[y][i]) {
                                 board[y][i - 1] *= 2;
                                 board[y][i] = 0;
                                 count--;
-                                moves++;
+                                moves = true;
                             }
                         }
                     }
@@ -227,11 +236,11 @@ public class Game extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitle1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        menuGame = new javax.swing.JButton();
-        restartGame = new javax.swing.JButton();
+        lbl2048Image = new javax.swing.JLabel();
+        lblDescription2 = new javax.swing.JLabel();
+        lblDescription1 = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
+        btnRestart = new javax.swing.JButton();
         Tile2 = new javax.swing.JLabel();
         Tile1 = new javax.swing.JLabel();
         Tile4 = new javax.swing.JLabel();
@@ -254,58 +263,58 @@ public class Game extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 680));
         setSize(new java.awt.Dimension(500, 680));
 
-        lblTitle1.setFont(new java.awt.Font("Clear Sans", 1, 48)); // NOI18N
-        lblTitle1.setForeground(new java.awt.Color(236, 196, 0));
-        lblTitle1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2048Logo.png"))); // NOI18N
-        lblTitle1.addKeyListener(new java.awt.event.KeyAdapter() {
+        lbl2048Image.setFont(new java.awt.Font("Clear Sans", 1, 48)); // NOI18N
+        lbl2048Image.setForeground(new java.awt.Color(236, 196, 0));
+        lbl2048Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2048Logo.png"))); // NOI18N
+        lbl2048Image.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Game.this.keyPressed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Clear Sans", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(111, 107, 96));
-        jLabel2.setText("Get to 2048 as fast as you can!");
-        jLabel2.addKeyListener(new java.awt.event.KeyAdapter() {
+        lblDescription2.setFont(new java.awt.Font("Clear Sans", 1, 18)); // NOI18N
+        lblDescription2.setForeground(new java.awt.Color(111, 107, 96));
+        lblDescription2.setText("Get to 2048 as fast as you can!");
+        lblDescription2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Game.this.keyPressed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(83, 77, 71));
-        jLabel3.setText("Use the Arrow Keys to move the tiles.");
-        jLabel3.addKeyListener(new java.awt.event.KeyAdapter() {
+        lblDescription1.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
+        lblDescription1.setForeground(new java.awt.Color(83, 77, 71));
+        lblDescription1.setText("Use the Arrow Keys to move the tiles.");
+        lblDescription1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Game.this.keyPressed(evt);
             }
         });
 
-        menuGame.setBackground(new java.awt.Color(245, 124, 95));
-        menuGame.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
-        menuGame.setForeground(new java.awt.Color(255, 255, 255));
-        menuGame.setText("MENU");
-        menuGame.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setBackground(new java.awt.Color(245, 124, 95));
+        btnMenu.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
+        btnMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenu.setText("MENU");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuGameActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
-        menuGame.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnMenu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Game.this.keyPressed(evt);
             }
         });
 
-        restartGame.setBackground(new java.awt.Color(237, 153, 91));
-        restartGame.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
-        restartGame.setForeground(new java.awt.Color(255, 255, 255));
-        restartGame.setText("RESTART");
-        restartGame.addActionListener(new java.awt.event.ActionListener() {
+        btnRestart.setBackground(new java.awt.Color(237, 153, 91));
+        btnRestart.setFont(new java.awt.Font("Clear Sans", 1, 20)); // NOI18N
+        btnRestart.setForeground(new java.awt.Color(255, 255, 255));
+        btnRestart.setText("RESTART");
+        btnRestart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                restartGameActionPerformed(evt);
+                btnRestartActionPerformed(evt);
             }
         });
-        restartGame.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnRestart.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Game.this.keyPressed(evt);
             }
@@ -415,18 +424,18 @@ public class Game extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(lblTitle1)
+                        .addComponent(lbl2048Image)
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(restartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnRestart, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(menuGame, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)))))
+                                    .addComponent(lblDescription1)
+                                    .addComponent(lblDescription2)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -469,16 +478,16 @@ public class Game extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle1)
+                    .addComponent(lbl2048Image)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel3)
+                        .addComponent(lblDescription1)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel2)
+                        .addComponent(lblDescription2)
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(restartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(menuGame, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnRestart, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Tile2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -509,11 +518,11 @@ public class Game extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGameActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         this.setVisible(false);
         Menu m = new Menu();
         m.start();
-    }//GEN-LAST:event_menuGameActionPerformed
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     //Key pressed methods to print out the key presses.
     private void keyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressed
@@ -528,11 +537,11 @@ public class Game extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_keyPressed
 
-    private void restartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartGameActionPerformed
+    private void btnRestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestartActionPerformed
         this.setVisible(false);
         Menu b = new Menu();
         b.game();
-    }//GEN-LAST:event_restartGameActionPerformed
+    }//GEN-LAST:event_btnRestartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -587,11 +596,11 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel Tile7;
     private javax.swing.JLabel Tile8;
     private javax.swing.JLabel Tile9;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel lblTitle1;
-    private javax.swing.JButton menuGame;
-    private javax.swing.JButton restartGame;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnRestart;
+    private javax.swing.JLabel lbl2048Image;
+    private javax.swing.JLabel lblDescription1;
+    private javax.swing.JLabel lblDescription2;
     // End of variables declaration//GEN-END:variables
 
 }

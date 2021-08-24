@@ -28,7 +28,7 @@ public class Winner extends javax.swing.JFrame {
 
     //Method used to print out file information
     public void fileIn(long time) throws IOException {
-        name = nameIn.getText();
+        name = txtUsername.getText();
         int secTotal = (int) time;//Changed the time to be an integer value
         File file = new File("win.txt");
         PrintWriter print = new PrintWriter(new FileWriter("win.txt", true));
@@ -58,78 +58,78 @@ public class Winner extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        playBut = new javax.swing.JButton();
-        exitBut = new javax.swing.JButton();
-        mainMenu = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        nameIn = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        enter = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
+        btnPlay = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
+        lblDescription = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        lblNotice = new javax.swing.JLabel();
+        btnEnter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 680));
         setSize(new java.awt.Dimension(500, 680));
 
-        jLabel1.setFont(new java.awt.Font("Clear Sans Medium", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(228, 192, 42));
-        jLabel1.setText("WINNER!");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblTitle.setFont(new java.awt.Font("Clear Sans Medium", 1, 48)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(228, 192, 42));
+        lblTitle.setText("WINNER!");
+        lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        playBut.setBackground(new java.awt.Color(237, 153, 91));
-        playBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        playBut.setForeground(new java.awt.Color(255, 255, 255));
-        playBut.setText("PLAY AGAIN");
-        playBut.addActionListener(new java.awt.event.ActionListener() {
+        btnPlay.setBackground(new java.awt.Color(237, 153, 91));
+        btnPlay.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnPlay.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlay.setText("PLAY AGAIN");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playButActionPerformed(evt);
+                btnPlayActionPerformed(evt);
             }
         });
 
-        exitBut.setBackground(new java.awt.Color(245, 124, 95));
-        exitBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        exitBut.setForeground(new java.awt.Color(255, 255, 255));
-        exitBut.setText("EXIT");
-        exitBut.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(245, 124, 95));
+        btnExit.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
-        mainMenu.setBackground(new java.awt.Color(236, 141, 83));
-        mainMenu.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        mainMenu.setForeground(new java.awt.Color(255, 255, 255));
-        mainMenu.setText("MAIN MENU");
-        mainMenu.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setBackground(new java.awt.Color(236, 141, 83));
+        btnMenu.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenu.setText("MAIN MENU");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainMenuActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Clear Sans Light", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(236, 141, 83));
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblDescription.setFont(new java.awt.Font("Clear Sans Light", 1, 24)); // NOI18N
+        lblDescription.setForeground(new java.awt.Color(236, 141, 83));
+        lblDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel3.setFont(new java.awt.Font("Clear Sans", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(83, 77, 71));
-        jLabel3.setText("Enter a Username to Join the Leaderboard:");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblUsername.setFont(new java.awt.Font("Clear Sans", 0, 24)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(83, 77, 71));
+        lblUsername.setText("Enter a Username to Join the Leaderboard:");
+        lblUsername.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        nameIn.setFont(new java.awt.Font("Clear Sans", 0, 24)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Clear Sans", 0, 24)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(83, 77, 71));
-        jLabel4.setText("Score will not be saved if blank.");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblNotice.setFont(new java.awt.Font("Clear Sans Light", 0, 14)); // NOI18N
+        lblNotice.setForeground(new java.awt.Color(83, 77, 71));
+        lblNotice.setText("Score will not be saved if blank.");
+        lblNotice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        enter.setBackground(new java.awt.Color(237, 153, 91));
-        enter.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        enter.setForeground(new java.awt.Color(255, 255, 255));
-        enter.setText("Enter");
-        enter.addActionListener(new java.awt.event.ActionListener() {
+        btnEnter.setBackground(new java.awt.Color(237, 153, 91));
+        btnEnter.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnEnter.setForeground(new java.awt.Color(255, 255, 255));
+        btnEnter.setText("ENTER");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterActionPerformed(evt);
+                btnEnterActionPerformed(evt);
             }
         });
 
@@ -140,56 +140,52 @@ public class Winner extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(lblTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(lblDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel3))
+                        .addComponent(lblUsername))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameIn, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(245, 245, 245)
-                                .addComponent(jLabel4))))
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel1)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addComponent(lblNotice)
+                        .addGap(103, 103, 103)
+                        .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(enter, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))))
+                    .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitle)
+                .addGap(6, 6, 6)
+                .addComponent(lblDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(lblUsername)
                 .addGap(12, 12, 12)
+                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nameIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNotice)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(enter, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(46, 46, 46)
+                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -197,42 +193,42 @@ public class Winner extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //When the play button is clicked, it restarts the game and allows the user to replay the game
-    private void playButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButActionPerformed
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         this.setVisible(false);
         Menu b = new Menu();
         b.game();
-    }//GEN-LAST:event_playButActionPerformed
+    }//GEN-LAST:event_btnPlayActionPerformed
 
     //Exit button, closes the game.
-    private void exitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitButActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
 
     //Goes back to the main menu when this button is clicked
-    private void mainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         this.setVisible(false);
         Menu m = new Menu();
         m.start();
-    }//GEN-LAST:event_mainMenuActionPerformed
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     //When enter is clicked, it stores the user's time and name into win.txt. 
-    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
-        name = nameIn.getText();
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        name = txtUsername.getText();
         if (!name.equals("")) {
             try {
                 fileIn(time);
-                enter.hide();
+                btnEnter.hide();
             } catch (IOException ex) {
                 Logger.getLogger(Winner.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_enterActionPerformed
+    }//GEN-LAST:event_btnEnterActionPerformed
 
     
     public void start(long temp) {
         time = temp;//Stores the amount of time passed in this method.
         initComponents();
-        jLabel2.setText("You reached 2048 in " + time + " seconds!");//Sets the congradulatory text with a time.
+        lblDescription.setText("You reached 2048 in " + time + " seconds!");//Sets the congradulatory text with a time.
         this.setVisible(true);
     }
 
@@ -272,15 +268,15 @@ public class Winner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton enter;
-    private javax.swing.JButton exitBut;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JButton mainMenu;
-    private javax.swing.JTextField nameIn;
-    private javax.swing.JButton playBut;
+    private javax.swing.JButton btnEnter;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnPlay;
+    private javax.swing.JLabel lblDescription;
+    private javax.swing.JLabel lblNotice;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
 }

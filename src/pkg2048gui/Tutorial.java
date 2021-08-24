@@ -32,7 +32,7 @@ public class Tutorial extends javax.swing.JFrame {
 
     public void start() {
         this.setVisible(true);
-        displayedInstructions.setIcon(a);
+        lblDisplay.setIcon(a);
         progressBar.setValue(0);
     }
 
@@ -49,8 +49,8 @@ public class Tutorial extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         btnNext = new javax.swing.JButton();
-        displayedInstructions = new javax.swing.JLabel();
-        menu = new javax.swing.JButton();
+        lblDisplay = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
         progressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,22 +73,22 @@ public class Tutorial extends javax.swing.JFrame {
             }
         });
 
-        displayedInstructions.addKeyListener(new java.awt.event.KeyAdapter() {
+        lblDisplay.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Tutorial.this.keyPressed(evt);
             }
         });
 
-        menu.setBackground(new java.awt.Color(245, 124, 95));
-        menu.setFont(new java.awt.Font("Clear Sans", 1, 18)); // NOI18N
-        menu.setForeground(new java.awt.Color(255, 255, 255));
-        menu.setText("MENU");
-        menu.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setBackground(new java.awt.Color(245, 124, 95));
+        btnMenu.setFont(new java.awt.Font("Clear Sans", 1, 18)); // NOI18N
+        btnMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenu.setText("MENU");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
-        menu.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnMenu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Tutorial.this.keyPressed(evt);
             }
@@ -108,26 +108,26 @@ public class Tutorial extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(displayedInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(68, 68, 68)
                         .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(displayedInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnNext)
-                        .addComponent(menu))
+                        .addComponent(btnMenu))
                     .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
@@ -139,37 +139,37 @@ public class Tutorial extends javax.swing.JFrame {
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         switch (slide) {
             case 1:
-                displayedInstructions.setIcon(b);
+                lblDisplay.setIcon(b);
                 slide++;
                 btnNext.setEnabled(false);
                 progressBar.setValue(13);
                 break;
             case 2:
-                displayedInstructions.setIcon(d);
+                lblDisplay.setIcon(d);
                 progressBar.setValue(36);
                 slide++;
                 break;
             case 3:
-                displayedInstructions.setIcon(e);
+                lblDisplay.setIcon(e);
                 progressBar.setValue(51);
                 slide++;
                 break;
             case 4:
-                displayedInstructions.setIcon(f);
+                lblDisplay.setIcon(f);
                 progressBar.setValue(63);
                 slide++;
                 break;
             case 5:
-                displayedInstructions.setIcon(g);
+                lblDisplay.setIcon(g);
                 progressBar.setValue(76);
                 slide++;
                 break;
             case 6:
-                displayedInstructions.setIcon(h);
+                lblDisplay.setIcon(h);
                 progressBar.setValue(88);
                 slide++;
             case 7:
-                displayedInstructions.setIcon(i);
+                lblDisplay.setIcon(i);
                 progressBar.setValue(100);
                 btnNext.setEnabled(false);
                 slide++;
@@ -177,17 +177,17 @@ public class Tutorial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNextActionPerformed
 
     //When the user clicks the menu button, it returns them to the main menu.
-    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         this.setVisible(false);
         Menu m = new Menu();
         m.start();
-    }//GEN-LAST:event_menuActionPerformed
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     //Method used for the user to click the right button in the interactive tutorial.
     private void keyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressed
         if (evt.getKeyCode() == KeyEvent.VK_RIGHT && slide == 2) {
             btnNext.setEnabled(true);
-            displayedInstructions.setIcon(c);
+            lblDisplay.setIcon(c);
         }
     }//GEN-LAST:event_keyPressed
 
@@ -228,10 +228,10 @@ public class Tutorial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnNext;
-    private javax.swing.JLabel displayedInstructions;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JButton menu;
+    private javax.swing.JLabel lblDisplay;
     private javax.swing.JProgressBar progressBar;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,56 +22,55 @@ public class GameOver extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        playBut = new javax.swing.JButton();
-        exitBut = new javax.swing.JButton();
-        mainMenuBut = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        btnPlay = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
+        lblDescription = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 680));
-        setPreferredSize(new java.awt.Dimension(500, 680));
         setSize(new java.awt.Dimension(500, 680));
 
-        jLabel1.setFont(new java.awt.Font("Clear Sans Medium", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(245, 124, 95));
-        jLabel1.setText("GAME OVER!");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblTitle.setFont(new java.awt.Font("Clear Sans Medium", 1, 48)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(245, 124, 95));
+        lblTitle.setText("GAME OVER!");
+        lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        playBut.setBackground(new java.awt.Color(237, 153, 91));
-        playBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        playBut.setForeground(new java.awt.Color(255, 255, 255));
-        playBut.setText("PLAY AGAIN");
-        playBut.addActionListener(new java.awt.event.ActionListener() {
+        btnPlay.setBackground(new java.awt.Color(237, 153, 91));
+        btnPlay.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnPlay.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlay.setText("PLAY AGAIN");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playButActionPerformed(evt);
+                btnPlayActionPerformed(evt);
             }
         });
 
-        exitBut.setBackground(new java.awt.Color(245, 124, 95));
-        exitBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        exitBut.setForeground(new java.awt.Color(255, 255, 255));
-        exitBut.setText("EXIT");
-        exitBut.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(245, 124, 95));
+        btnExit.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
-        mainMenuBut.setBackground(new java.awt.Color(236, 141, 83));
-        mainMenuBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        mainMenuBut.setForeground(new java.awt.Color(255, 255, 255));
-        mainMenuBut.setText("MAIN MENU");
-        mainMenuBut.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setBackground(new java.awt.Color(236, 141, 83));
+        btnMenu.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        btnMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenu.setText("MAIN MENU");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainMenuButActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Clear Sans Light", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(83, 77, 71));
-        jLabel2.setText("You ran out of spaces and moves.");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblDescription.setFont(new java.awt.Font("Clear Sans Light", 1, 24)); // NOI18N
+        lblDescription.setForeground(new java.awt.Color(83, 77, 71));
+        lblDescription.setText("You ran out of spaces and moves.");
+        lblDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,29 +80,29 @@ public class GameOver extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(mainMenuBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
+                        .addComponent(lblDescription)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(38, 38, 38)
-                            .addComponent(jLabel1))))
+                            .addComponent(lblTitle))))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(144, 144, 144)
-                .addComponent(jLabel1)
+                .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(lblDescription)
                 .addGap(51, 51, 51)
-                .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
-                .addComponent(mainMenuBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(165, Short.MAX_VALUE))
         );
 
@@ -111,23 +110,23 @@ public class GameOver extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //When the play again button is clicked, it will restart the game and let the user play again.
-    private void playButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButActionPerformed
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         this.setVisible(false);
         Menu b = new Menu();
         b.game(); 
-    }//GEN-LAST:event_playButActionPerformed
+    }//GEN-LAST:event_btnPlayActionPerformed
 
     //When the exit button is clicked, it will exit the game.
-    private void exitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitButActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
 
     //When the main menu button is clicked, it will send the user back to the main menu.
-    private void mainMenuButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
       this.setVisible(false);
         Menu m = new Menu();
         m.start(); 
-    }//GEN-LAST:event_mainMenuButActionPerformed
+    }//GEN-LAST:event_btnMenuActionPerformed
     
     public void start() {
         this.setVisible(true);
@@ -172,10 +171,10 @@ public class GameOver extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitBut;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton mainMenuBut;
-    private javax.swing.JButton playBut;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnPlay;
+    private javax.swing.JLabel lblDescription;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
