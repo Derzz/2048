@@ -27,6 +27,7 @@ public class Game extends javax.swing.JFrame {
      * Creates new form Game
      */
     public Game() {
+        super("2048!");
         initComponents();
         tiles[0][0] = Tile1;        // Assigns each tile in the grid to its corresponding spot in the array.
         tiles[0][1] = Tile2;
