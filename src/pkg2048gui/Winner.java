@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 public class Winner extends javax.swing.JFrame {
 
     public Winner() throws IOException {
+        super("Winner!");
         this.setVisible(true);
     }
 
@@ -227,10 +228,11 @@ public class Winner extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_enterActionPerformed
 
+    
     public void start(long temp) {
-        time = temp;
+        time = temp;//Stores the amount of time passed in this method.
         initComponents();
-        jLabel2.setText("You reached 2048 in " + time + " seconds!");
+        jLabel2.setText("You reached 2048 in " + time + " seconds!");//Sets the congradulatory text with a time.
         this.setVisible(true);
     }
 

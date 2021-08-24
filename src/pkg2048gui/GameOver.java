@@ -6,10 +6,6 @@
  */
 package pkg2048gui;
 
-/**
- *
- * @author Sherry
- */
 public class GameOver extends javax.swing.JFrame {
 
     /**
@@ -17,8 +13,8 @@ public class GameOver extends javax.swing.JFrame {
      */
     
     public GameOver() {
+        super("Game Over!");
         this.setVisible(true);
-        
         initComponents();
     }
 
@@ -29,7 +25,7 @@ public class GameOver extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         playBut = new javax.swing.JButton();
         exitBut = new javax.swing.JButton();
-        playBut1 = new javax.swing.JButton();
+        mainMenuBut = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,13 +58,13 @@ public class GameOver extends javax.swing.JFrame {
             }
         });
 
-        playBut1.setBackground(new java.awt.Color(236, 141, 83));
-        playBut1.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
-        playBut1.setForeground(new java.awt.Color(255, 255, 255));
-        playBut1.setText("MAIN MENU");
-        playBut1.addActionListener(new java.awt.event.ActionListener() {
+        mainMenuBut.setBackground(new java.awt.Color(236, 141, 83));
+        mainMenuBut.setFont(new java.awt.Font("Clear Sans", 1, 24)); // NOI18N
+        mainMenuBut.setForeground(new java.awt.Color(255, 255, 255));
+        mainMenuBut.setText("MAIN MENU");
+        mainMenuBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playBut1ActionPerformed(evt);
+                mainMenuButActionPerformed(evt);
             }
         });
 
@@ -87,7 +83,7 @@ public class GameOver extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(playBut1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mainMenuBut, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel2)
                         .addGroup(layout.createSequentialGroup()
@@ -105,7 +101,7 @@ public class GameOver extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(playBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
-                .addComponent(playBut1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainMenuBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(exitBut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(165, Short.MAX_VALUE))
@@ -114,21 +110,24 @@ public class GameOver extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //When the play again button is clicked, it will restart the game and let the user play again.
     private void playButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButActionPerformed
         this.setVisible(false);
         Menu b = new Menu();
         b.game(); 
     }//GEN-LAST:event_playButActionPerformed
 
+    //When the exit button is clicked, it will exit the game.
     private void exitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButActionPerformed
 
-    private void playBut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playBut1ActionPerformed
+    //When the main menu button is clicked, it will send the user back to the main menu.
+    private void mainMenuButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButActionPerformed
       this.setVisible(false);
         Menu m = new Menu();
         m.start(); 
-    }//GEN-LAST:event_playBut1ActionPerformed
+    }//GEN-LAST:event_mainMenuButActionPerformed
     
     public void start() {
         this.setVisible(true);
@@ -176,7 +175,7 @@ public class GameOver extends javax.swing.JFrame {
     private javax.swing.JButton exitBut;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton mainMenuBut;
     private javax.swing.JButton playBut;
-    private javax.swing.JButton playBut1;
     // End of variables declaration//GEN-END:variables
 }

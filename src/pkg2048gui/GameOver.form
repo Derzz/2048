@@ -38,7 +38,7 @@
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                       <Component id="exitBut" min="-2" pref="350" max="-2" attributes="0"/>
                       <Component id="playBut" min="-2" pref="350" max="-2" attributes="0"/>
-                      <Component id="playBut1" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                      <Component id="mainMenuBut" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -62,7 +62,7 @@
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Component id="playBut" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-              <Component id="playBut1" min="-2" pref="60" max="-2" attributes="0"/>
+              <Component id="mainMenuBut" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="exitBut" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace pref="165" max="32767" attributes="0"/>
@@ -117,7 +117,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitButActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="playBut1">
+    <Component class="javax.swing.JButton" name="mainMenuBut">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="53" green="8d" red="ec" type="rgb"/>
@@ -131,7 +131,7 @@
         <Property name="text" type="java.lang.String" value="MAIN MENU"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playBut1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mainMenuButActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

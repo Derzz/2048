@@ -6,9 +6,8 @@
  */
 package pkg2048gui;
 
-//Imports
+//Imports files
 import javax.swing.ImageIcon;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -16,6 +15,7 @@ import java.util.logging.Logger;
 
 public class Game extends javax.swing.JFrame {
 
+    //Initalizes the stopwatch object
     stopwatch w = new stopwatch();
 
     javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];
@@ -26,6 +26,7 @@ public class Game extends javax.swing.JFrame {
      * Creates new form Game
      */
     public Game() {
+        super("2048");
         initComponents();
         tiles[0][0] = Tile1;    // Set tiles to array
         tiles[0][1] = Tile2;
@@ -72,8 +73,7 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
-        
-                            boolean moved = false;
+        boolean moved = false;
         //Switch cases used for arrow key directions.
         switch (dir) {
             case 0: // UP
@@ -210,7 +210,7 @@ public class Game extends javax.swing.JFrame {
     }
 
     public void start() {
-        w.stopwatchStart();
+        w.stopwatchStart();//Starts the stopwatch
         this.setVisible(true);
     }
 
@@ -505,6 +505,7 @@ public class Game extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Menu button, if pressed it will send the user back to the main menu
     private void menuGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGameActionPerformed
         this.setVisible(false);
         Menu m = new Menu();
@@ -524,6 +525,7 @@ public class Game extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_keyPressed
 
+    //Restart button, if pressed it will reset the game
     private void restartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartGameActionPerformed
         this.setVisible(false);
         Menu b = new Menu();

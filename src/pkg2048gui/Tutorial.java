@@ -9,12 +9,9 @@ package pkg2048gui;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Justin
- */
 public class Tutorial extends javax.swing.JFrame {
     
+    //All images stored in ImageIcons.
     ImageIcon a = new ImageIcon("Instructions1.png");
     ImageIcon b = new ImageIcon("Instructions2.png");
     ImageIcon c = new ImageIcon("Instructions3.png");
@@ -24,23 +21,23 @@ public class Tutorial extends javax.swing.JFrame {
     ImageIcon g = new ImageIcon("Instructions7.png");
     ImageIcon h = new ImageIcon("Instructions8.png");
     ImageIcon i = new ImageIcon("Instructions9.png");
-    
+
     /**
      * Creates new form instructionSlides
      */
-    
     public Tutorial() {
+        super("Tutorial");
         initComponents();
     }
-    
-    public void start(){
-    this.setVisible(true);
-    displayedInstructions.setIcon(a);
-    progressBar.setValue(0);
+
+    public void start() {
+        this.setVisible(true);
+        displayedInstructions.setIcon(a);
+        progressBar.setValue(0);
     }
-    
-    int slide = 1;
-    
+
+    int slide = 1;//Variable used to state the possition of the instructions, when it reaches two, an interactive portion begins
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -138,8 +135,6 @@ public class Tutorial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
     //Method used to show the tutorial.
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         switch (slide) {
@@ -181,17 +176,19 @@ public class Tutorial extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnNextActionPerformed
 
+    //When the user clicks the menu button, it returns them to the main menu.
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-       this.setVisible(false);
+        this.setVisible(false);
         Menu m = new Menu();
-        m.start(); 
+        m.start();
     }//GEN-LAST:event_menuActionPerformed
 
+    //Method used for the user to click the right button in the interactive tutorial.
     private void keyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_RIGHT && slide == 2)  {
-         btnNext.setEnabled(true);
-         displayedInstructions.setIcon(c);
-     }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT && slide == 2) {
+            btnNext.setEnabled(true);
+            displayedInstructions.setIcon(c);
+        }
     }//GEN-LAST:event_keyPressed
 
     /**

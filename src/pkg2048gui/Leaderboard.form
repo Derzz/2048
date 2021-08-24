@@ -55,7 +55,7 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="menuGame2" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="showBut" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="menuGame1" min="-2" pref="140" max="-2" attributes="0"/>
                   </Group>
@@ -88,7 +88,7 @@
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="menuGame1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="menuGame2" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="showBut" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="115" max="32767" attributes="0"/>
           </Group>
@@ -163,7 +163,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="menuGame2">
+    <Component class="javax.swing.JButton" name="showBut">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5f" green="7c" red="f5" type="rgb"/>
@@ -177,7 +177,7 @@
         <Property name="text" type="java.lang.String" value="Show!"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuGame2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showButActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
