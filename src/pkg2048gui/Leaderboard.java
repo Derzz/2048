@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Leaderboard extends javax.swing.JFrame {
-    
+
     public Leaderboard() {
         super("Leaderboard");
         initComponents();
@@ -19,7 +19,7 @@ public class Leaderboard extends javax.swing.JFrame {
     public void start() {
         this.setVisible(true);
     }
-   
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -141,16 +141,16 @@ public class Leaderboard extends javax.swing.JFrame {
             File file = new File("win.txt");
             Scanner fileReader = new Scanner(file);
             String temp = "";
-            while(fileReader.hasNext()){
+            while (fileReader.hasNext()) {
                 fileReader.next();//Skips over the numbers at the beginning of the lines.
-                temp = temp+fileReader.nextLine()+ "\n";//Stores the value into the String value
+                temp = temp + fileReader.nextLine() + "\n";//Stores the value into the String value
             }
             txtOutput.setText(temp);//Output the values on the JTextArea
 
         } catch (Exception e) {
             txtOutput.setText("Looks like no one has gotten a place on the leaderboard yet!\nMaybe it's time for you to get to 2048!");//If no file is detected, it means no one got to 2048. This means someone needs to get to 2048.
         }
-        
+
         btnShow.hide();//Hides the show button
         lblDescription2.hide();//Hides the label asking them to click the "show" button.
 

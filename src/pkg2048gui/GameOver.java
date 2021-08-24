@@ -11,7 +11,6 @@ public class GameOver extends javax.swing.JFrame {
     /**
      * Creates new form GameOver
      */
-    
     public GameOver() {
         super("Game Over!");
         this.setVisible(true);
@@ -113,7 +112,7 @@ public class GameOver extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         this.setVisible(false);
         Menu b = new Menu();
-        b.game(); 
+        b.game();
     }//GEN-LAST:event_btnPlayActionPerformed
 
     //When the exit button is clicked, it will exit the game.
@@ -123,15 +122,15 @@ public class GameOver extends javax.swing.JFrame {
 
     //When the main menu button is clicked, it will send the user back to the main menu.
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-      this.setVisible(false);
+        this.setVisible(false);
         Menu m = new Menu();
-        m.start(); 
+        m.start();
     }//GEN-LAST:event_btnMenuActionPerformed
-    
+
     public void start() {
         this.setVisible(true);
     }
-    
+
     /**
      * @param args the command line arguments
      */

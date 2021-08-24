@@ -32,26 +32,26 @@ public class Winner extends javax.swing.JFrame {
         int secTotal = (int) time;//Changed the time to be an integer value
         File file = new File("win.txt");
         PrintWriter print = new PrintWriter(new FileWriter("win.txt", true));
-        int minutes = secTotal/60;//Minutes the user took
-        int seconds = secTotal-minutes*60;//How many seconds the user took(excluding seconds)
-        print.println(time+" "+name+ " took "+ minutes+ " minutes and "+seconds+" seconds to reach 2048!");
+        int minutes = secTotal / 60;//Minutes the user took
+        int seconds = secTotal - minutes * 60;//How many seconds the user took(excluding seconds)
+        print.println(time + " " + name + " took " + minutes + " minutes and " + seconds + " seconds to reach 2048!");
         sort(file, print);//Moves to the sorting method
     }
-    
+
     //Sorting method
-    public void sort(File file, PrintWriter out) throws FileNotFoundException, IOException{//Takes File and Printwriter as parameters
+    public void sort(File file, PrintWriter out) throws FileNotFoundException, IOException {//Takes File and Printwriter as parameters
         //Below reads the values, sorts them, and reprints them onto the file.
         Scanner fileReader = new Scanner(file);
-         ArrayList<String> ar = new ArrayList<String>();
-         int counter = 0;
-         while(fileReader.hasNext()){
-             ar.add(fileReader.nextLine());
-         }
-         Collections.sort(ar);//Collections used to sort the ArrayList values.
-         for(int i = 0; i < counter; i++){
-             out.println(ar.get(i));
-         }
-         out.close();//Closes PrintWriter
+        ArrayList<String> ar = new ArrayList<String>();
+        int counter = 0;
+        while (fileReader.hasNext()) {
+            ar.add(fileReader.nextLine());
+        }
+        Collections.sort(ar);//Collections used to sort the ArrayList values.
+        for (int i = 0; i < counter; i++) {
+            out.println(ar.get(i));
+        }
+        out.close();//Closes PrintWriter
     }
 
     @SuppressWarnings("unchecked")
@@ -224,7 +224,6 @@ public class Winner extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEnterActionPerformed
 
-    
     public void start(long temp) {
         time = temp;//Stores the amount of time passed in this method.
         initComponents();

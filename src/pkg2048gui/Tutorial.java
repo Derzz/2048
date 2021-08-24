@@ -10,7 +10,7 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 
 public class Tutorial extends javax.swing.JFrame {
-    
+
     //All images stored in ImageIcons.
     ImageIcon a = new ImageIcon("Instructions1.png");
     ImageIcon b = new ImageIcon("Instructions2.png");

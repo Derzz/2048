@@ -5,7 +5,6 @@
  * Game.java
  * This program is the mainframe of the game mechanics.
  */
-
 package pkg2048gui;
 
 // Imports
@@ -22,7 +21,7 @@ public class Game extends javax.swing.JFrame {
     javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];    // Generate a 2D array to display the tile images.
     int[][] board = new int[4][4];                                  // Generate a 2D array to store the value of the tiles.
     int count = 2;                  // Initialize the counter variable for the number of tiles. 
-                                    // Set the board to generate 2 tiles at the beginning.
+    // Set the board to generate 2 tiles at the beginning.
 
     /**
      * Creates new form Game
@@ -45,20 +44,20 @@ public class Game extends javax.swing.JFrame {
         tiles[3][1] = Tile14;
         tiles[3][2] = Tile15;
         tiles[3][3] = Tile16;
-        
+
         for (int j = 0; j < 4; j++) {    // Loop goes through every value in 2D array
             for (int i = 0; i < 4; i++) {
                 tiles[j][i].setIcon(new ImageIcon("0.png"));    // Makes all tiles blank for the start.
             }
         }
-        
+
         // Randomly selects 2 different spots on the grid and generates either a 2 or a 4 tile.
         int rand = (int) (Math.random() * 16);
         int rand2 = (int) (Math.random() * 16);
         while (rand2 == rand) {                     // If both variables happen to be the same, randomize again.
             rand2 = (int) (Math.random() * 16);
         }
-        
+
         board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;    // Choose a random tile to generate a 2 or 4 tile.
         board[(int) (rand2 / 4)][rand2 % 4] = ((int) (Math.random() * 2) + 1) * 2;  // Choose a second random tile to generate a 2 or 4 tile.
         tiles[(int) (rand / 4)][rand % 4].setIcon(new ImageIcon(board[(int) (rand / 4)][rand % 4] + ".png"));       // Display  2 or 4  on the random tile.
@@ -78,7 +77,7 @@ public class Game extends javax.swing.JFrame {
         }
 
         boolean moves;  // Initialize the boolean variable to track if a tile has moved.
-        
+
         switch (dir) {  // Switch cases used for arrow key directions.
             case 0: // UP Key.
                 for (int x = 0; x < 4; x++) {       // Loop through all array values.
@@ -98,7 +97,7 @@ public class Game extends javax.swing.JFrame {
                     }
                 }
                 break;
-                
+
             case 1: // RIGHT Key.
                 for (int y = 0; y < 4; y++) {       // Loop through all array values.
                     moves = false;                  // Reset the tracking boolean variable as false.
@@ -117,7 +116,7 @@ public class Game extends javax.swing.JFrame {
                     }
                 }
                 break;
-                
+
             case 2: // DOWN
                 for (int x = 0; x < 4; x++) {
                     moves = false;
@@ -136,7 +135,7 @@ public class Game extends javax.swing.JFrame {
                     }
                 }
                 break;
-                
+
             case 3: // LEFT
                 for (int y = 0; y < 4; y++) {
                     moves = false;
