@@ -3,8 +3,9 @@
  * August 24, 2021
  * ICS4UE-20
  * Game.java
- * This program is the mainframe of the game mechanics.
+ * This program is the mainframe of the game mechanics and GUI.
  */
+
 package pkg2048gui;
 
 // Imports
@@ -79,20 +80,21 @@ public class Game extends javax.swing.JFrame {
 
         boolean moves;  // Initialize the boolean variable to track if a tile has moved.
 
-        switch (dir) {  // Switch cases used for arrow key directions.
+        switch (dir) {  // Switch cases used for arrow key directions. x and y variables are used, respective to a 2D coordinate.
             case 0: // UP Key.
                 for (int x = 0; x < 4; x++) {       // Loop through all array values.
                     moves = false;                  // Reset the tracking boolean variable as false.
                     for (int y = 1; y < 4; y++) {
                         for (int i = y; i > 0; i--) {
                             if (board[i - 1][x] == 0) {          // If the tile above is empty (value 0). 
-                                board[i - 1][x] = board[i][x];   // Move the tile up.
+                                board[i - 1][x] = board[i][x];   // Move the tile up one space.
                                 board[i][x] = 0;                 // Set the tile's old place as 0.
-                            } else if (moves == false && board[i - 1][x] == board[i][x]) {   // If tile beside is the same, multiply tile value * 2
-                                board[i - 1][x] *= 2;
-                                board[i][x] = 0;
-                                count--;    // Remove 1 from number of tiles on board
-                                moves = true;
+                            } 
+                            else if (moves == false && board[i - 1][x] == board[i][x]) {   // If the tile above is the same and the column has not had a merge yet. 
+                                board[i - 1][x] *= 2;   // Multiply the tile above by 2.
+                                board[i][x] = 0;        // Set the tile's old place as 0.
+                                count--;                // Remove 1 from number of tiles on board.
+                                moves = true;           // Set the move boolean variable to true. This will prevent more than 1 merge per column.
                             }
                         }
                     }
@@ -105,77 +107,83 @@ public class Game extends javax.swing.JFrame {
                     for (int x = 2; x >= 0; x--) {
                         for (int i = x; i < 3; i++) {
                             if (board[y][i + 1] == 0) {         // If the tile to the right is empty (value 0). 
-                                board[y][i + 1] = board[y][i];
-                                board[y][i] = 0;
-                            } else if (moves == false && board[y][i + 1] == board[y][i]) {
-                                board[y][i + 1] *= 2;
-                                board[y][i] = 0;
-                                count--;
-                                moves = true;
+                                board[y][i + 1] = board[y][i];  // Move the tile right one space.
+                                board[y][i] = 0;                // Set the tile's old place as 0.
+                            } 
+                            else if (moves == false && board[y][i + 1] == board[y][i]) {    // If the tile to the right is the same and the row has not had a merge yet. 
+                                board[y][i + 1] *= 2;   // Multiply the tile to the right by 2.
+                                board[y][i] = 0;        // Set the tile's old place as 0.
+                                count--;                // Remove 1 from number of tiles on board.
+                                moves = true;           // Set the move boolean variable to true. This will prevent more than 1 merge per row.
                             }
                         }
                     }
                 }
                 break;
 
-            case 2: // DOWN
-                for (int x = 0; x < 4; x++) {
-                    moves = false;
+            case 2: // DOWN Key.
+                for (int x = 0; x < 4; x++) {       // Loop through all array values.
+                    moves = false;                  // Reset the tracking boolean variable as false.
                     for (int y = 2; y >= 0; y--) {
                         for (int i = y; i < 3; i++) {
-                            if (board[i + 1][x] == 0) {
-                                board[i + 1][x] = board[i][x];
-                                board[i][x] = 0;
-                            } else if (moves == false && board[i + 1][x] == board[i][x]) {
-                                board[i + 1][x] *= 2;
-                                board[i][x] = 0;
-                                count--;
-                                moves = true;
+                            if (board[i + 1][x] == 0) {         // If the tile below is empty (value 0). 
+                                board[i + 1][x] = board[i][x];  // Move the tile down one space.
+                                board[i][x] = 0;                // Set the tile's old place as 0.
+                            } 
+                            else if (moves == false && board[i + 1][x] == board[i][x]) {    // If the tile below is the same and the column has not had a merge yet.
+                                board[i + 1][x] *= 2;   // Multiply the tile below by 2.
+                                board[i][x] = 0;        // Set the tile's old place as 0.
+                                count--;                // Remove 1 from number of tiles on board.
+                                moves = true;           // Set the move boolean variable to true. This will prevent more than 1 merge per column.
                             }
                         }
                     }
                 }
                 break;
 
-            case 3: // LEFT
-                for (int y = 0; y < 4; y++) {
-                    moves = false;
+            case 3: // LEFT Key.
+                for (int y = 0; y < 4; y++) {       // Loop through all array values.
+                    moves = false;                  // Reset the tracking boolean variable as false.
                     for (int x = 1; x < 4; x++) {
                         for (int i = x; i > 0; i--) {
-                            if (board[y][i - 1] == 0) {
-                                board[y][i - 1] = board[y][i];
-                                board[y][i] = 0;
-                            } else if (moves == false && board[y][i - 1] == board[y][i]) {
-                                board[y][i - 1] *= 2;
-                                board[y][i] = 0;
-                                count--;
-                                moves = true;
+                            if (board[y][i - 1] == 0) {         // If the tile to the right is empty (value 0). 
+                                board[y][i - 1] = board[y][i];  // Move the tile left one space.
+                                board[y][i] = 0;                // Set the tile's old place as 0.
+                            } 
+                            else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the right is the same and the row has not had a merge yet.
+                                board[y][i - 1] *= 2;   // Multiply the tile to the left by 2.
+                                board[y][i] = 0;        // Set the tile's old place as 0.
+                                count--;                // Remove 1 from number of tiles on board.
+                                moves = true;           // Set the move boolean variable to true. This will prevent more than 1 merge per row.
                             }
                         }
                     }
                 }
                 break;
-            default://Runs if there is no case value
+            
+            default:    // If no arrow key input is detected.
                 break;
         }
 
-        String newValues = "";
+        String newValues = "";           // Initialize String variable to contain new values.
 
-        for (int j = 0; j < 4; j++) {    // Goes through entire array, adds array values as a String
+        for (int j = 0; j < 4; j++) {    // Goes through entire array, combines all values into a String.
             for (int i = 0; i < 4; i++) {
 
-                newValues += String.valueOf(board[j][i]);
+                newValues += String.valueOf(board[j][i]);   // Add the value of the specific tile to the String.
                 if (i != 16) {
-                    newValues += " ";
+                    newValues += " ";                       // Add a space in between each value until all 16 tiles are added to String.
                 }
             }
         }
 
-        while (count < 16 && !values.equals(newValues)) {     // As long as there is an empty space and the tiles have moved
-            int rand = (int) (Math.random() * 16);       // Only complete 1 operation at a time
-            if (board[(int) (rand / 4)][rand % 4] == 0) {
-                board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;    // Assign new value to open tile
-                count++;
+        // While loop ensures that a tile is only generated when there is an empty space and the user has moved at least one tile on the board.
+        while (count < 16 && !values.equals(newValues)) {
+            int rand = (int) (Math.random() * 16);          // Generates a random number between 1-16.
+            
+            if (board[(int) (rand / 4)][rand % 4] == 0) {   // Only allows a tile to generate when space is empty.
+                board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;    // Randomly assigns 2 or 4 to an open tile.
+                count++;    // Add one to the number of tiles on board.
                 break;
             }
         }
