@@ -5,7 +5,6 @@
  * Game.java
  * This program is the mainframe of the game mechanics and GUI.
  */
-
 package pkg2048gui;
 
 // Imports
@@ -89,8 +88,7 @@ public class Game extends javax.swing.JFrame {
                             if (board[i - 1][x] == 0) {          // If the tile above is empty (value 0). 
                                 board[i - 1][x] = board[i][x];   // Move the tile up one space.
                                 board[i][x] = 0;                 // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[i - 1][x] == board[i][x]) {   // If the tile above is the same and the column has not had a merge yet. 
+                            } else if (moves == false && board[i - 1][x] == board[i][x]) {   // If the tile above is the same and the column has not had a merge yet. 
                                 board[i - 1][x] *= 2;   // Multiply the tile above by 2.
                                 board[i][x] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -109,8 +107,7 @@ public class Game extends javax.swing.JFrame {
                             if (board[y][i + 1] == 0) {         // If the tile to the right is empty (value 0). 
                                 board[y][i + 1] = board[y][i];  // Move the tile right one space.
                                 board[y][i] = 0;                // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[y][i + 1] == board[y][i]) {    // If the tile to the right is the same and the row has not had a merge yet. 
+                            } else if (moves == false && board[y][i + 1] == board[y][i]) {    // If the tile to the right is the same and the row has not had a merge yet. 
                                 board[y][i + 1] *= 2;   // Multiply the tile to the right by 2.
                                 board[y][i] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -129,8 +126,7 @@ public class Game extends javax.swing.JFrame {
                             if (board[i + 1][x] == 0) {         // If the tile below is empty (value 0). 
                                 board[i + 1][x] = board[i][x];  // Move the tile down one space.
                                 board[i][x] = 0;                // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[i + 1][x] == board[i][x]) {    // If the tile below is the same and the column has not had a merge yet.
+                            } else if (moves == false && board[i + 1][x] == board[i][x]) {    // If the tile below is the same and the column has not had a merge yet.
                                 board[i + 1][x] *= 2;   // Multiply the tile below by 2.
                                 board[i][x] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -149,8 +145,7 @@ public class Game extends javax.swing.JFrame {
                             if (board[y][i - 1] == 0) {         // If the tile to the right is empty (value 0). 
                                 board[y][i - 1] = board[y][i];  // Move the tile left one space.
                                 board[y][i] = 0;                // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the right is the same and the row has not had a merge yet.
+                            } else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the right is the same and the row has not had a merge yet.
                                 board[y][i - 1] *= 2;   // Multiply the tile to the left by 2.
                                 board[y][i] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -160,7 +155,7 @@ public class Game extends javax.swing.JFrame {
                     }
                 }
                 break;
-            
+
             default:    // If no arrow key input is detected.
                 break;
         }
@@ -180,7 +175,7 @@ public class Game extends javax.swing.JFrame {
         // While loop ensures that a tile is only generated when there is an empty space and the user has moved at least one tile on the board.
         while (count < 16 && !values.equals(newValues)) {
             int rand = (int) (Math.random() * 16);          // Generates a random number between 1-16.
-            
+
             if (board[(int) (rand / 4)][rand % 4] == 0) {   // Only allows a tile to generate when space is empty.
                 board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;    // Randomly assigns 2 or 4 to an open tile.
                 count++;    // Add one to the number of tiles on board.
@@ -188,13 +183,13 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
-        if (count == 16 && values.equals(newValues)) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
-                this.setVisible(false);
-                w.stopwatchStop();
-                GameOver m = new GameOver();
-                m.start();
+        if (count == 16 && values.equals(newValues) && availableMoveCheck()) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
+            this.setVisible(false);
+            w.stopwatchStop();
+            GameOver m = new GameOver();
+            m.start();
         }
-        
+
         long temp = 0;
         long time;
         for (int j = 0; j < 4; j++) {   // Go through array, checks if any of the values are equal to 2048.
@@ -223,6 +218,49 @@ public class Game extends javax.swing.JFrame {
                 tiles[j][i].setIcon(new ImageIcon(board[j][i] + ".png"));     // Go through array, set all the icons as their value (refresh)
             }
         }
+    }//End of slide method
+
+    public boolean availableMoveCheck() {
+        boolean moves = true;
+
+        for (int x = 0; x < 4; x++) {       // Loop through all array values.
+            for (int y = 1; y < 4; y++) {
+                for (int i = y; i > 0; i--) {
+                    if (board[i - 1][x] == board[i][x]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+        for (int x = 0; x < 4; x++) {       // Loop through all array values.               
+            for (int y = 2; y >= 0; y--) {
+                for (int i = y; i < 3; i++) {
+                    if (board[i + 1][x] == board[i][x]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+
+         for (int x = 0; x < 4; x++) {       // Loop through all array values.              
+                    for (int y = 2; y >= 0; y--) {
+                        for (int i = y; i < 3; i++) {
+                    if (board[i + 1][x] == board[i][x]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+        for (int y = 0; y < 4; y++) {       // Loop through all array values.                 
+            for (int x = 1; x < 4; x++) {
+                for (int i = x; i > 0; i--) {
+                    if (board[y][i - 1] == board[y][i]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+        return moves;
     }
 
     public void start() {
