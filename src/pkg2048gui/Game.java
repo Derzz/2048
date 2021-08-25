@@ -221,14 +221,15 @@ public class Game extends javax.swing.JFrame {
         }
     }//End of slide method
 
+    //Method used to check if any available moves are left.
     public boolean availableMoveCheck() {
-        boolean moves = true;
+        boolean noMoves = true;//Boolean value used to check if there are any moves. If it's false, it means there are moves available, if true, it means there are no moves available.
 
         for (int x = 0; x < 4; x++) {       // Loop through all array values.
             for (int y = 1; y < 4; y++) {
                 for (int i = y; i > 0; i--) {
                     if (board[i - 1][x] == board[i][x]) {
-                        moves = false;
+                        noMoves = false;
                     }
                 }
             }
@@ -237,7 +238,7 @@ public class Game extends javax.swing.JFrame {
             for (int y = 2; y >= 0; y--) {
                 for (int i = y; i < 3; i++) {
                     if (board[i + 1][x] == board[i][x]) {
-                        moves = false;
+                        noMoves = false;
                     }
                 }
             }
@@ -247,7 +248,7 @@ public class Game extends javax.swing.JFrame {
                     for (int y = 2; y >= 0; y--) {
                         for (int i = y; i < 3; i++) {
                     if (board[i + 1][x] == board[i][x]) {
-                        moves = false;
+                        noMoves = false;
                     }
                 }
             }
@@ -256,12 +257,12 @@ public class Game extends javax.swing.JFrame {
             for (int x = 1; x < 4; x++) {
                 for (int i = x; i > 0; i--) {
                     if (board[y][i - 1] == board[y][i]) {
-                        moves = false;
+                        noMoves = false;
                     }
                 }
             }
         }
-        return moves;
+        return noMoves;
     }
 
     public void start() {
