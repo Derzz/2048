@@ -42,14 +42,14 @@ public class Winner extends javax.swing.JFrame {
     public void sort(File file, PrintWriter out) throws FileNotFoundException, IOException {//Takes File and Printwriter as parameters
         //Below reads the values, sorts them, and reprints them onto the file.
         Scanner fileReader = new Scanner(file);
-        ArrayList<String> ar = new ArrayList<String>();
+        ArrayList<String> ar = new ArrayList<String>();//Creates ArrayList so .txt components can be sorted
         int counter = 0;
         while (fileReader.hasNext()) {
             ar.add(fileReader.nextLine());
         }
         Collections.sort(ar);//Collections used to sort the ArrayList values.
         for (int i = 0; i < counter; i++) {
-            out.println(ar.get(i));
+            out.println(ar.get(i));//Prints out the sorted values onto the txt file
         }
         out.close();//Closes PrintWriter
     }
