@@ -5,6 +5,7 @@
  * Game.java
  * This program is the mainframe of the game mechanics and GUI.
  */
+
 package pkg2048gui;
 
 // Imports.
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
 
 public class Game extends javax.swing.JFrame {
 
-    stopwatch w = new stopwatch();  // Creates an object to be able to call methods from this class.
+    Stopwatch w = new Stopwatch();  // Creates an object to be able to call methods from this class.
 
     javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];    // Generate a 2D array to display the tile images.
     int[][] board = new int[4][4];                                  // Generate a 2D array to store the value of the tiles.
@@ -27,7 +28,7 @@ public class Game extends javax.swing.JFrame {
      * Creates new form Game
      */
     public Game() {
-        super("2048!");             // Creates label for the window.
+        super("2048");             // Creates label for the window.
         initComponents();           // Initialize components.
         tiles[0][0] = Tile1;        // Assigns each tile in the grid to its corresponding spot in the array.
         tiles[0][1] = Tile2;
@@ -142,10 +143,10 @@ public class Game extends javax.swing.JFrame {
                     moves = false;                  // Reset the tracking boolean variable as false.
                     for (int x = 1; x < 4; x++) {
                         for (int i = x; i > 0; i--) {
-                            if (board[y][i - 1] == 0) {         // If the tile to the right is empty (value 0).
+                            if (board[y][i - 1] == 0) {         // If the tile to the left is empty (value 0).
                                 board[y][i - 1] = board[y][i];  // Move the tile left one space.
                                 board[y][i] = 0;                // Set the tile's old place as 0.
-                            } else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the right is the same and the row has not had a merge yet.
+                            } else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the left is the same and the row has not had a merge yet.
                                 board[y][i - 1] *= 2;   // Multiply the tile to the left by 2.
                                 board[y][i] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -185,7 +186,7 @@ public class Game extends javax.swing.JFrame {
 
         if (count == 16 && values.equals(newValues) && availableMoveCheck()) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
                 this.setVisible(false);         // Close the game window.
-                w.stopwatchStop();              // Stop the stopwatch.
+                w.stopwatchStop();              // Stop the Stopwatch.
                 GameOver m = new GameOver();    // Creates an object to be able to call methods from this class.
                 m.start();                      // Run the method in the GameOver file to display the GameOver screen.
         }
@@ -197,7 +198,7 @@ public class Game extends javax.swing.JFrame {
             for (int i = 0; i < 4; i++) {
                 if (board[j][i] == 2048) {      // Checks if any value is equal to 2048.
                     try {
-                        temp = w.stopwatchReturn();     // Imports the time from the stopwatch.
+                        temp = w.stopwatchReturn();     // Imports the time from the Stopwatch.
                     } catch (IOException ex) {
                         Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -221,15 +222,16 @@ public class Game extends javax.swing.JFrame {
         }
     }   // End of slide method.
 
-    //Method used to check if any available moves are left.
+    // Method used to check if any available moves are left.
     public boolean availableMoveCheck() {
-        boolean noMoves = true;//Boolean value used to check if there are any moves. If it's false, it means there are moves available, if true, it means there are no moves available.
+        boolean noMoves = true;             // Boolean value used to check if there are any moves. 
+                                            // Moves are available when false. No moves left when true.
 
         for (int x = 0; x < 4; x++) {       // Loop through all array values.
             for (int y = 1; y < 4; y++) {
                 for (int i = y; i > 0; i--) {
-                    if (board[i - 1][x] == board[i][x]) {
-                        noMoves = false;
+                    if (board[i - 1][x] == board[i][x]) {   // Check the tile above to see if they are the same value.
+                        noMoves = false;                    // If equal, set boolean to false. Move is available.
                     }
                 }
             }
@@ -237,8 +239,8 @@ public class Game extends javax.swing.JFrame {
         for (int x = 0; x < 4; x++) {       // Loop through all array values.
             for (int y = 2; y >= 0; y--) {
                 for (int i = y; i < 3; i++) {
-                    if (board[i + 1][x] == board[i][x]) {
-                        noMoves = false;
+                    if (board[y][i+1] == board[y][i]) {     // Check the tile to the right to see if they are the same value.
+                        noMoves = false;                    // If equal, set boolean to false. Move is available.
                     }
                 }
             }
@@ -247,8 +249,8 @@ public class Game extends javax.swing.JFrame {
          for (int x = 0; x < 4; x++) {       // Loop through all array values.
                     for (int y = 2; y >= 0; y--) {
                         for (int i = y; i < 3; i++) {
-                    if (board[i + 1][x] == board[i][x]) {
-                        noMoves = false;
+                    if (board[i + 1][x] == board[i][x]) {   // Check the tile below to see if they are the same value.
+                        noMoves = false;                    // If equal, set boolean to false. Move is available.
                     }
                 }
             }
@@ -256,8 +258,8 @@ public class Game extends javax.swing.JFrame {
         for (int y = 0; y < 4; y++) {       // Loop through all array values.
             for (int x = 1; x < 4; x++) {
                 for (int i = x; i > 0; i--) {
-                    if (board[y][i - 1] == board[y][i]) {
-                        noMoves = false;
+                    if (board[y][i - 1] == board[y][i]) {   // Check the tile to the left to see if they are the same value.
+                        noMoves = false;                    // If equal, set boolean to false. Move is available.
                     }
                 }
             }
@@ -265,8 +267,9 @@ public class Game extends javax.swing.JFrame {
         return noMoves;
     }
 
+    // Method that starts the game.
     public void start() {
-        w.stopwatchStart();         // Method that resets and starts stopwatch.
+        w.stopwatchStart();         // Method that resets and starts the stopwatch.
         this.setVisible(true);      // Displays the game screen.
     }
 

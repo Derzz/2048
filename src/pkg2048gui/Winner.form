@@ -58,7 +58,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnPlay" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                  <Component id="btnPlayAgain" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                   <Component id="btnMenu" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                   <Component id="btnExit" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
               </Group>
@@ -85,7 +85,7 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="btnPlay" min="-2" pref="60" max="-2" attributes="0"/>
+              <Component id="btnPlayAgain" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
               <Component id="btnMenu" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
@@ -108,7 +108,7 @@
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPlay">
+    <Component class="javax.swing.JButton" name="btnPlayAgain">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5b" green="99" red="ed" type="rgb"/>
@@ -122,7 +122,7 @@
         <Property name="text" type="java.lang.String" value="PLAY AGAIN"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPlayActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPlayAgainActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">
