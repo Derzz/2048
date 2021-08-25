@@ -1,9 +1,11 @@
 /*
-* Danish Wasif, Evan Woo, Michael Xie, Justin Ye
-* August 24, 2021
-* ICS4UE-20
-* Class that displays the GUI aspects of the game over screen.
+ * Danish Wasif, Evan Woo, Michael Xie, Justin Ye
+ * August 24, 2021
+ * ICS4UE-20
+ * GameOver.java
+ * Class that displays the GUI aspects of the Game Over screen.
  */
+
 package pkg2048gui;
 
 public class GameOver extends javax.swing.JFrame {
@@ -12,9 +14,9 @@ public class GameOver extends javax.swing.JFrame {
      * Creates new form GameOver
      */
     public GameOver() {
-        super("Game Over!");
-        this.setVisible(true);
-        initComponents();
+        super("Game Over!");        // Creates label for the window.
+        this.setVisible(true);      // Makes the GameOvert screen visible.
+        initComponents();           // Initializes components.
     }
 
     @SuppressWarnings("unchecked")
@@ -108,27 +110,28 @@ public class GameOver extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //When the play again button is clicked, it will restart the game and let the user play again.
+    // When the Play Again button is pressed.
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        this.setVisible(false);
-        Menu b = new Menu();
-        b.game();
+        this.setVisible(false);     // Hides the Game Over screen.
+        Menu b = new Menu();        // Creates an object to be able to call methods from this class.
+        b.game();                   // Calls on method to play again.
     }//GEN-LAST:event_btnPlayActionPerformed
 
-    //When the exit button is clicked, it will exit the game.
+    // When the Exit button is pressed.
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.exit(0);
+        System.exit(0);     // Close the application.
     }//GEN-LAST:event_btnExitActionPerformed
 
-    //When the main menu button is clicked, it will send the user back to the main menu.
+    // When the Main Menu button is pressed.
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        this.setVisible(false);
-        Menu m = new Menu();
-        m.start();
+        this.setVisible(false);     // Hides the Game Over screen.
+        Menu m = new Menu();        // Creates an object to be able to call methods from this class.
+        m.start();                  // Calls on method to send user to the Main Menu.
     }//GEN-LAST:event_btnMenuActionPerformed
 
+    // Function to be called to display Game Over screen.
     public void start() {
-        this.setVisible(true);
+        this.setVisible(true);      // Displays the Game Over screen.
     }
 
     /**
