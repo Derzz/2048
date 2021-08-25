@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Stopwatch {
 
-    StopWatch watch = new StopWatch();  // Creates an object to be able to call methods from this class.
+    StopWatch watch = new StopWatch();  // Creates a new stopwatch for the code to run off of.
 
     // Method that resets then starts the stopwatch.
     public void stopwatchStart() {
