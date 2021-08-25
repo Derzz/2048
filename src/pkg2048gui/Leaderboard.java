@@ -6,18 +6,20 @@
  */
 package pkg2048gui;
 
+// Imports.
 import java.io.File;
 import java.util.Scanner;
 
 public class Leaderboard extends javax.swing.JFrame {
 
     public Leaderboard() {
-        super("Leaderboard");
-        initComponents();
+        super("Leaderboard");   // Creates label for the window.
+        initComponents();       // Initializes components.
     }
 
+    // Function to be called to open the leaderboard.
     public void start() {
-        this.setVisible(true);
+        this.setVisible(true);  // Make the leaderboard visible.
     }
 
     @SuppressWarnings("unchecked")
@@ -131,30 +133,31 @@ public class Leaderboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-//When the menu button is clicked, it sends the user to the main menu.
+    // When the Menu Button is pressed. 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        this.setVisible(false);
-        Menu m = new Menu();
-        m.start();
+        this.setVisible(false);     // Closes the Leaderboard window.
+        Menu m = new Menu();        // Creates an object to be able to call methods from this class.
+        m.start();                  // Calls on method to open the Main Menu.
     }//GEN-LAST:event_btnMenuActionPerformed
-//When the show button is clicked, it shows the leaderboard from win.txt.
+
+    // When the Show Button is pressed.
     private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
         try {
-            File file = new File("win.txt");
-            Scanner fileReader = new Scanner(file);
-            String temp = "";
-            while (fileReader.hasNext()) {
-                fileReader.next();//Skips over the numbers at the beginning of the lines.
-                temp = temp + fileReader.nextLine() + "\n";//Stores the value into the String value
+            File file = new File("win.txt");        // Try to create an object from the win.txt file.
+            Scanner fileReader = new Scanner(file); // Use the Scanner to read the file.
+            String temp = "";                       // Initialize a String value to store the win.txt file.
+            while (fileReader.hasNext()) {          // While the file still has text after, the loop will continue.
+                fileReader.next();                  // Skips over the numbers at the beginning of each line.
+                temp = temp + fileReader.nextLine() + "\n"; // Stores the text into the String value and generates a new line.
             }
-            txtOutput.setText(temp);//Output the values on the JTextArea
+            txtOutput.setText(temp);    // Output the values on the txtOutput JTextArea.
 
-        } catch (Exception e) {
-            txtOutput.setText("Looks like no one has gotten a place on the leaderboard yet!\nMaybe it's time for you to get to 2048!");//If no file is detected, it means no one got to 2048. This means someone needs to get to 2048.
+        } catch (Exception e) {     // If no win.txt file can be found (no one reached 2048).
+            txtOutput.setText("Looks like no one has gotten a place on the leaderboard yet!\nMaybe it's time for you to get to 2048!"); // Print loser message.
         }
 
-        btnShow.hide();//Hides the show button
-        lblDescription2.hide();//Hides the label asking them to click the "show" button.
+        btnShow.hide();         // Hides the Show button.
+        lblDescription2.hide(); // Hides the label asking the user to click the Show button.
 
     }//GEN-LAST:event_btnShowActionPerformed
 

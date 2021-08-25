@@ -15,7 +15,7 @@ public class GameOver extends javax.swing.JFrame {
      */
     public GameOver() {
         super("Game Over!");        // Creates label for the window.
-        this.setVisible(true);      // Makes the GameOvert screen visible.
+        this.setVisible(true);      // Makes the GameOver screen visible.
         initComponents();           // Initializes components.
     }
 

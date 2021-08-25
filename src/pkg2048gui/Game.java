@@ -219,7 +219,7 @@ public class Game extends javax.swing.JFrame {
                 tiles[j][i].setIcon(new ImageIcon(board[j][i] + ".png"));     // Displays every icon as their value (refresh).
             }
         }
-    }//End of slide method
+    }   // End of slide method.
 
     //Method used to check if any available moves are left.
     public boolean availableMoveCheck() {
