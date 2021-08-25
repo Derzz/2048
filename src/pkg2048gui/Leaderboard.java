@@ -1,9 +1,11 @@
 /*
-* Danish Wasif, Evan Woo, Michael Xie, Justin Ye
-* August 24, 2021
-* ICS4UE-20
-* Class that displays the Leaderboard and the functions behind it.
+ * Danish Wasif, Evan Woo, Michael Xie, Justin Ye
+ * August 24, 2021
+ * ICS4UE-20
+ * Leaderboard.java
+ * Class that displays the Leaderboard and contains functions behind it.
  */
+
 package pkg2048gui;
 
 // Imports.
@@ -17,9 +19,9 @@ public class Leaderboard extends javax.swing.JFrame {
         initComponents();       // Initializes components.
     }
 
-    // Function to be called to open the leaderboard.
+    // Function to be called to open the Leaderboard.
     public void start() {
-        this.setVisible(true);  // Make the leaderboard visible.
+        this.setVisible(true);  // Make the Leaderboard visible.
     }
 
     @SuppressWarnings("unchecked")
