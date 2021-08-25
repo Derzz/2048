@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class Game extends javax.swing.JFrame {
 
-    stopwatch w = new stopwatch();  // Import the stopwatch to this game file.
+    stopwatch w = new stopwatch();  // Import the stopwatch to this game file and start.
 
     javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];    // Generate a 2D array to display the tile images.
     int[][] board = new int[4][4];                                  // Generate a 2D array to store the value of the tiles.
@@ -189,10 +189,10 @@ public class Game extends javax.swing.JFrame {
         }
 
         if (count == 16 && values.equals(newValues)) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
-                this.setVisible(false);
-                w.stopwatchStop();
+                this.setVisible(false);         // Close the game window.
+                w.stopwatchStop();              // Stop the stopwatch.
                 GameOver m = new GameOver();
-                m.start();
+                m.start();                      // Run the method in the GameOver file to display the GameOver screen.
         }
         
         long temp = 0;
