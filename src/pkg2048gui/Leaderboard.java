@@ -3,7 +3,7 @@
  * August 24, 2021
  * ICS4UE-20
  * Leaderboard.java
- * Class that displays the Leaderboard and contains functions behind it.
+ * Class that displays the GUI aspects of the Leaderboard and contains functions behind it.
  */
 
 package pkg2048gui;

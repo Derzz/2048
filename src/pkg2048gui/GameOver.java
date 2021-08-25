@@ -3,7 +3,7 @@
  * August 24, 2021
  * ICS4UE-20
  * GameOver.java
- * Class that displays the GUI aspects of the Game Over screen.
+ * Class that displays the GUI aspects of the Game Over screen and contains functions behind it.
  */
 
 package pkg2048gui;

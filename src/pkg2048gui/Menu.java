@@ -3,7 +3,7 @@
  * August 24, 2021
  * ICS4UE-20
  * Menu.java
- * Class that displays the GUI aspects of the Menu.
+ * Class that displays the GUI aspects of the Main Menu and contains functions behind it.
  */
 
 package pkg2048gui;
@@ -153,19 +153,19 @@ class Menu extends javax.swing.JFrame {
         System.exit(0);     // Exit the application.
     }//GEN-LAST:event_btnExitActionPerformed
 
-    //Play button, allows the user to play the game
+    // When the Play button is pressed.
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        game();
+        game();         // Calls on game method.
     }//GEN-LAST:event_btnPlayActionPerformed
 
-    //Tutorial button, allows the user to start the tutorial
+    // When the Tutorial button is pressed.
     private void btnTutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTutorialActionPerformed
-        tutorial();
+        tutorial();     // Calls on tutorial method.
     }//GEN-LAST:event_btnTutorialActionPerformed
 
-    //Leaderboard button, allows the user to access the leaderboard
+    // When the Leaderboard button is pressed.
     private void btnLeaderboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaderboardActionPerformed
-        leaderboard();
+        leaderboard();  // Calls on leaderboard method.
     }//GEN-LAST:event_btnLeaderboardActionPerformed
 
     /**

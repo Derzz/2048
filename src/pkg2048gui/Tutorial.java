@@ -1,17 +1,20 @@
 /*
-* Danish Wasif, Evan Woo, Michael Xie, Justin Ye
-* August 24, 2021
-* ICS4UE-20
-* Class that displays the GUI aspects of the tutorial and the functions behind it.
+ * Danish Wasif, Evan Woo, Michael Xie, Justin Ye
+ * August 24, 2021
+ * ICS4UE-20
+ * Tutorial.java
+ * Class that displays the GUI aspects of the Tutorial and contains functions behind it.
  */
+
 package pkg2048gui;
 
+// Imports.
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 
 public class Tutorial extends javax.swing.JFrame {
 
-    //All images stored in ImageIcons.
+    // Stores images from the project folder as ImageIcons.
     ImageIcon a = new ImageIcon("Instructions1.png");
     ImageIcon b = new ImageIcon("Instructions2.png");
     ImageIcon c = new ImageIcon("Instructions3.png");
