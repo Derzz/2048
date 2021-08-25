@@ -197,7 +197,7 @@ public class Game extends javax.swing.JFrame {
         
         long temp = 0;
         long time;
-        for (int j = 0; j < 4; j++) {   //Go through array, checks if any of the values are equal to 2048.
+        for (int j = 0; j < 4; j++) {   // Go through array, checks if any of the values are equal to 2048.
             for (int i = 0; i < 4; i++) {
                 if (board[j][i] == 2048) {
                     try {
