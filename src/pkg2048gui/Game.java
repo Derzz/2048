@@ -188,18 +188,13 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
-        if (count == 16 && values.equals(newValues)) {  // Find a way to revert this check if there are still options, this still needs work
-            String temp = newValues;
-
-            System.out.println(temp.equals(newValues));
-
-            if (temp.equals(newValues)) {
+        if (count == 16 && values.equals(newValues)) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
                 this.setVisible(false);
                 w.stopwatchStop();
                 GameOver m = new GameOver();
                 m.start();
-            }
         }
+        
         long temp = 0;
         long time;
         for (int j = 0; j < 4; j++) {   //Go through array, checks if any of the values are equal to 2048.

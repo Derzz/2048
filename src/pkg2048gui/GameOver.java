@@ -68,7 +68,7 @@ public class GameOver extends javax.swing.JFrame {
 
         lblDescription.setFont(new java.awt.Font("Clear Sans Light", 1, 24)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(83, 77, 71));
-        lblDescription.setText("You ran out of spaces and moves.");
+        lblDescription.setText("You ran out of moves and spaces.");
         lblDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

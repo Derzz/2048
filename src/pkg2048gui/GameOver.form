@@ -139,7 +139,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="47" green="4d" red="53" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="You ran out of spaces and moves."/>
+        <Property name="text" type="java.lang.String" value="You ran out of moves and spaces."/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
     </Component>
