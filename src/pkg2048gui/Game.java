@@ -8,7 +8,7 @@
 
 package pkg2048gui;
 
-// Imports
+// Imports.
 import javax.swing.ImageIcon;
 import java.awt.event.*;
 import java.io.IOException;
