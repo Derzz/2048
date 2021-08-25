@@ -5,7 +5,6 @@
  * Game.java
  * This program is the mainframe of the game mechanics and GUI.
  */
-
 package pkg2048gui;
 
 // Imports.
@@ -21,7 +20,7 @@ public class Game extends javax.swing.JFrame {
 
     javax.swing.JLabel[][] tiles = new javax.swing.JLabel[4][4];    // Generate a 2D array to display the tile images.
     int[][] board = new int[4][4];                                  // Generate a 2D array to store the value of the tiles.
-    int count = 2;                  // Initialize the counter variable for the number of tiles. 
+    int count = 2;                  // Initialize the counter variable for the number of tiles.
     // Set the board to generate 2 tiles at the beginning.
 
     /**
@@ -86,11 +85,10 @@ public class Game extends javax.swing.JFrame {
                     moves = false;                  // Reset the tracking boolean variable as false.
                     for (int y = 1; y < 4; y++) {
                         for (int i = y; i > 0; i--) {
-                            if (board[i - 1][x] == 0) {          // If the tile above is empty (value 0). 
+                            if (board[i - 1][x] == 0) {          // If the tile above is empty (value 0).
                                 board[i - 1][x] = board[i][x];   // Move the tile up one space.
                                 board[i][x] = 0;                 // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[i - 1][x] == board[i][x]) {   // If the tile above is the same and the column has not had a merge yet. 
+                            } else if (moves == false && board[i - 1][x] == board[i][x]) {   // If the tile above is the same and the column has not had a merge yet.
                                 board[i - 1][x] *= 2;   // Multiply the tile above by 2.
                                 board[i][x] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -106,11 +104,10 @@ public class Game extends javax.swing.JFrame {
                     moves = false;                  // Reset the tracking boolean variable as false.
                     for (int x = 2; x >= 0; x--) {
                         for (int i = x; i < 3; i++) {
-                            if (board[y][i + 1] == 0) {         // If the tile to the right is empty (value 0). 
+                            if (board[y][i + 1] == 0) {         // If the tile to the right is empty (value 0).
                                 board[y][i + 1] = board[y][i];  // Move the tile right one space.
                                 board[y][i] = 0;                // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[y][i + 1] == board[y][i]) {    // If the tile to the right is the same and the row has not had a merge yet. 
+                            } else if (moves == false && board[y][i + 1] == board[y][i]) {    // If the tile to the right is the same and the row has not had a merge yet.
                                 board[y][i + 1] *= 2;   // Multiply the tile to the right by 2.
                                 board[y][i] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -126,11 +123,10 @@ public class Game extends javax.swing.JFrame {
                     moves = false;                  // Reset the tracking boolean variable as false.
                     for (int y = 2; y >= 0; y--) {
                         for (int i = y; i < 3; i++) {
-                            if (board[i + 1][x] == 0) {         // If the tile below is empty (value 0). 
+                            if (board[i + 1][x] == 0) {         // If the tile below is empty (value 0).
                                 board[i + 1][x] = board[i][x];  // Move the tile down one space.
                                 board[i][x] = 0;                // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[i + 1][x] == board[i][x]) {    // If the tile below is the same and the column has not had a merge yet.
+                            } else if (moves == false && board[i + 1][x] == board[i][x]) {    // If the tile below is the same and the column has not had a merge yet.
                                 board[i + 1][x] *= 2;   // Multiply the tile below by 2.
                                 board[i][x] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -146,11 +142,10 @@ public class Game extends javax.swing.JFrame {
                     moves = false;                  // Reset the tracking boolean variable as false.
                     for (int x = 1; x < 4; x++) {
                         for (int i = x; i > 0; i--) {
-                            if (board[y][i - 1] == 0) {         // If the tile to the right is empty (value 0). 
+                            if (board[y][i - 1] == 0) {         // If the tile to the right is empty (value 0).
                                 board[y][i - 1] = board[y][i];  // Move the tile left one space.
                                 board[y][i] = 0;                // Set the tile's old place as 0.
-                            } 
-                            else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the right is the same and the row has not had a merge yet.
+                            } else if (moves == false && board[y][i - 1] == board[y][i]) {   // If the tile to the right is the same and the row has not had a merge yet.
                                 board[y][i - 1] *= 2;   // Multiply the tile to the left by 2.
                                 board[y][i] = 0;        // Set the tile's old place as 0.
                                 count--;                // Remove 1 from number of tiles on board.
@@ -160,7 +155,7 @@ public class Game extends javax.swing.JFrame {
                     }
                 }
                 break;
-            
+
             default:    // If no arrow key input is detected.
                 break;
         }
@@ -180,7 +175,7 @@ public class Game extends javax.swing.JFrame {
         // While loop ensures that a tile is only generated when there is an empty space and the user has moved at least one tile on the board.
         while (count < 16 && !values.equals(newValues)) {
             int rand = (int) (Math.random() * 16);          // Generates a random number between 1-16.
-            
+
             if (board[(int) (rand / 4)][rand % 4] == 0) {   // Only allows a tile to generate when space is empty.
                 board[(int) (rand / 4)][rand % 4] = ((int) (Math.random() * 2) + 1) * 2;    // Randomly assigns 2 or 4 to an open tile.
                 count++;    // Add one to the number of tiles on board.
@@ -194,10 +189,10 @@ public class Game extends javax.swing.JFrame {
                 GameOver m = new GameOver();    // Creates an object to be able to call methods from this class.
                 m.start();                      // Run the method in the GameOver file to display the GameOver screen.
         }
-        
+
         long time;      // Initialize a long variable to store the user's time.
         long temp = 0;  // Initialize a long variable to store the user's time.
-        
+
         for (int j = 0; j < 4; j++) {           // Goes through every value in the array
             for (int i = 0; i < 4; i++) {
                 if (board[j][i] == 2048) {      // Checks if any value is equal to 2048.
@@ -224,6 +219,49 @@ public class Game extends javax.swing.JFrame {
                 tiles[j][i].setIcon(new ImageIcon(board[j][i] + ".png"));     // Displays every icon as their value (refresh).
             }
         }
+    }//End of slide method
+
+    public boolean availableMoveCheck() {
+        boolean moves = true;
+
+        for (int x = 0; x < 4; x++) {       // Loop through all array values.
+            for (int y = 1; y < 4; y++) {
+                for (int i = y; i > 0; i--) {
+                    if (board[i - 1][x] == board[i][x]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+        for (int x = 0; x < 4; x++) {       // Loop through all array values.
+            for (int y = 2; y >= 0; y--) {
+                for (int i = y; i < 3; i++) {
+                    if (board[i + 1][x] == board[i][x]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+
+         for (int x = 0; x < 4; x++) {       // Loop through all array values.
+                    for (int y = 2; y >= 0; y--) {
+                        for (int i = y; i < 3; i++) {
+                    if (board[i + 1][x] == board[i][x]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+        for (int y = 0; y < 4; y++) {       // Loop through all array values.
+            for (int x = 1; x < 4; x++) {
+                for (int i = x; i > 0; i--) {
+                    if (board[y][i - 1] == board[y][i]) {
+                        moves = false;
+                    }
+                }
+            }
+        }
+        return moves;
     }
 
     public void start() {
@@ -533,21 +571,21 @@ public class Game extends javax.swing.JFrame {
     private void keyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressed
         switch (evt.getKeyCode()) {
             case KeyEvent.VK_UP:     // If the user presses the UP key.
-                slide(0);            // Run the slide function indicating the up direction. 
+                slide(0);            // Run the slide function indicating the up direction.
                 break;
-                
+
             case KeyEvent.VK_RIGHT:  // If the user presses the RIGHT key.
-                slide(1);            // Run the slide function indicating the right direction. 
+                slide(1);            // Run the slide function indicating the right direction.
                 break;
-                
+
             case KeyEvent.VK_DOWN:   // If the user presses the DOWN key.
-                slide(2);            // Run the slide function indicating the down direction. 
+                slide(2);            // Run the slide function indicating the down direction.
                 break;
-                
+
             case KeyEvent.VK_LEFT:   // If the user presses the LEFT key.
-                slide(3);            // Run the slide function indicating the left direction. 
+                slide(3);            // Run the slide function indicating the left direction.
                 break;
-                
+
             default:                 // If the user does not press any key.
                 break;
         }
@@ -556,7 +594,7 @@ public class Game extends javax.swing.JFrame {
     // When the Restart button is pressed.
     private void btnRestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestartActionPerformed
         this.setVisible(false);      // Hide the game window.
-        Menu b = new Menu();         // Creates an object to be able to call methods from this class. 
+        Menu b = new Menu();         // Creates an object to be able to call methods from this class.
         b.game();                    // Calls on method to start a new game.
     }//GEN-LAST:event_btnRestartActionPerformed
 
@@ -567,7 +605,7 @@ public class Game extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
