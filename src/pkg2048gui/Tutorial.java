@@ -29,17 +29,18 @@ public class Tutorial extends javax.swing.JFrame {
      * Creates new form instructionSlides
      */
     public Tutorial() {
-        super("Tutorial");
-        initComponents();
+        super("Tutorial");      // Creates label for the window.
+        initComponents();       // Initializes components. 
     }
 
+    // Function to be called to open the Tutorial.
     public void start() {
-        this.setVisible(true);
-        lblDisplay.setIcon(a);
-        progressBar.setValue(0);
+        this.setVisible(true);      // Hide the Tutorial window.
+        lblDisplay.setIcon(a);      // Displays the first icon automatically on the display.
+        progressBar.setValue(0);    // Set the progress bar to 0%.
     }
 
-    int slide = 1;//Variable used to state the possition of the instructions, when it reaches two, an interactive portion begins
+    int slide = 1;  // Variable used to state the position of the slides. When slide equals 2, an interactive portion begins.
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -138,7 +139,7 @@ public class Tutorial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Method used to show the tutorial.
+    // Method used to switch images on a display.
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         switch (slide) {
             case 1:
