@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 
 public class Tutorial extends javax.swing.JFrame {
 
-    // Stores images from the project folder as ImageIcons.
+    // Stores images from the project folder as ImageIcons in sequential order.
     ImageIcon a = new ImageIcon("Instructions1.png");
     ImageIcon b = new ImageIcon("Instructions2.png");
     ImageIcon c = new ImageIcon("Instructions3.png");
@@ -139,59 +139,61 @@ public class Tutorial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // Method used to switch images on a display.
+    // Switches images of the tutorial on the display when the Next button is pressed.
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         switch (slide) {
             case 1:
-                lblDisplay.setIcon(b);
-                slide++;
-                btnNext.setEnabled(false);
-                progressBar.setValue(13);
+                lblDisplay.setIcon(b);      // Sets icon to b.
+                slide++;                    // Adds 1 to the slide counter.
+                btnNext.setEnabled(false);  // Disable the Next button.
+                progressBar.setValue(14);   // Increases the progress bar to 14%.
                 break;
+            // Interactive tutorial happens here. See keyPressed(java.awt.event.KeyEvent evt) for more info.
             case 2:
-                lblDisplay.setIcon(d);
-                progressBar.setValue(36);
-                slide++;
+                lblDisplay.setIcon(d);      // Sets icon to d.
+                progressBar.setValue(29);   // Increases the progress bar to 29%.
+                slide++;                    // Adds 1 to the slide counter.
                 break;
             case 3:
-                lblDisplay.setIcon(e);
-                progressBar.setValue(51);
-                slide++;
+                lblDisplay.setIcon(e);      // Sets icon to e.
+                progressBar.setValue(43);   // Increases the progress bar to 43%.
+                slide++;                    // Adds 1 to the slide counter.
                 break;
             case 4:
-                lblDisplay.setIcon(f);
-                progressBar.setValue(63);
-                slide++;
+                lblDisplay.setIcon(f);      // Sets icon to f.
+                progressBar.setValue(57);   // Increases the progress bar to 57%.
+                slide++;                    // Adds 1 to the slide counter.
                 break;
             case 5:
-                lblDisplay.setIcon(g);
-                progressBar.setValue(76);
-                slide++;
+                lblDisplay.setIcon(g);      // Sets icon to g.
+                progressBar.setValue(71);   // Increases the progress bar to 71%.
+                slide++;                    // Adds 1 to the slide counter.
                 break;
             case 6:
-                lblDisplay.setIcon(h);
-                progressBar.setValue(88);
-                slide++;
+                lblDisplay.setIcon(h);      // Sets icon to h.
+                progressBar.setValue(86);   // Increases the progress bar to 86%.
+                slide++;                    // Adds 1 to the slide counter.
+                break;
             case 7:
-                lblDisplay.setIcon(i);
-                progressBar.setValue(100);
-                btnNext.setEnabled(false);
-                slide++;
+                lblDisplay.setIcon(i);      // Sets icon to i.
+                progressBar.setValue(100);  // Increases the progress bar to 100%.
+                btnNext.setEnabled(false);  // Disables the Next button as the user has reached the end.
+                break;
         }
     }//GEN-LAST:event_btnNextActionPerformed
 
-    //When the user clicks the menu button, it returns them to the main menu.
+    // When the Menu button is pressed.
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        this.setVisible(false);
-        Menu m = new Menu();
-        m.start();
+        this.setVisible(false);     // Closes the Tutorial window.
+        Menu m = new Menu();        // Creates an object to be able to call methods from this class.
+        m.start();                  // Calls on method to open the Main Menu.
     }//GEN-LAST:event_btnMenuActionPerformed
 
-    //Method used for the user to click the right button in the interactive tutorial.
+    // Method to check if the user presses the right arrow key in the interactive tutorial.
     private void keyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_RIGHT && slide == 2) {
-            btnNext.setEnabled(true);
-            lblDisplay.setIcon(c);
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT && slide == 2) {  // If the user presses the right key, and the display is on the second slide.
+            btnNext.setEnabled(true);   // Re-enable the Next button.
+            lblDisplay.setIcon(c);      // Display the next image.
         }
     }//GEN-LAST:event_keyPressed
 
