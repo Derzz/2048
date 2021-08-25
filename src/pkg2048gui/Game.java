@@ -183,7 +183,7 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
-        if (count == 16 && values.equals(newValues)) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
+        if (count == 16 && values.equals(newValues) && availableMoveCheck()) {  // If statement that checks when there are 16 tiles and the user cannot make another move.
                 this.setVisible(false);         // Close the game window.
                 w.stopwatchStop();              // Stop the stopwatch.
                 GameOver m = new GameOver();    // Creates an object to be able to call methods from this class.
